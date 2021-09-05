@@ -6,10 +6,7 @@ exports.up = async function(knex)
 {
   await knex.schema.alterTable(tableName, table =>
   {
-    table.string(columnName, 15)
-      .index()
-      .references('id')
-      .inTable('tags');
+    table.text(columnName).index();
   });
 };
 
