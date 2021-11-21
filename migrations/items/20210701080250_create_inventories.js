@@ -10,10 +10,10 @@ exports.up = async function(knex)
   {
     table.increments('pk_id');
 
-    table.string('user_id', 15).index();
+    table.string('user_id', 15).index().notNullable();
     table.string('context').index();
-    table.string('item_code').index();
-    table.integer('amount');
+    table.string('item_code').index().notNullable();
+    table.integer('amount').defaultTo(0);
 
     table.dateTime('created_at').index().defaultTo(knex.fn.now());
     table.dateTime('updated_at').index();
