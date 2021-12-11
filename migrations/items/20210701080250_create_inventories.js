@@ -12,7 +12,7 @@ exports.up = async function(knex)
 
     table.string('user_id', 15).index().notNullable();
     table.string('item_code').index().notNullable();
-    table.string('user_id_item_code').unique();
+    table.string('user_id_item_code').unique().notNullable();;
     table.string('context').index();
     table.integer('amount').defaultTo(0);
 
