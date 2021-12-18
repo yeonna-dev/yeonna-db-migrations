@@ -1,4 +1,4 @@
-const tableName = 'collections';
+const tableName = 'collections_items';
 
 /** @param {import('knex').Knex} knex */
 exports.up = async function(knex)
@@ -10,9 +10,8 @@ exports.up = async function(knex)
   {
     table.increments('pk_id');
 
-    table.string('code').unique().notNullable();
-    table.string('name').index().notNullable();
-    table.decimal('fixed_bonus').defaultTo(0);
+    table.string('collection_code').index().notNullable();
+    table.string('item_code').index().notNullable();
 
     table.dateTime('created_at').index().defaultTo(knex.fn.now());
     table.dateTime('updated_at').index();
@@ -21,7 +20,4 @@ exports.up = async function(knex)
 };
 
 /** @param {import('knex').Knex} knex */
-exports.down = async function(knex)
-{
-  await knex.schema.dropTableIfExists(tableName);
-};
+exports.down = async function(knex) { };
