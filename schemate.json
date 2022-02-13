@@ -1,6 +1,9 @@
 {
   "knexPath": "connection.js",
   "modules": {
+    "seeders": {
+      "migrationsDir": "seeders/"
+    },
     "users": {
       "migrationsDir": "migrations/users/"
     },
