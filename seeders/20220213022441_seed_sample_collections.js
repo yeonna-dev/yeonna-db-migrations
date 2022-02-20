@@ -4,12 +4,13 @@ const collectionsItemsTable = 'collections_items';
 /** @param {import('knex').Knex} knex */
 exports.up = async function(knex)
 {
+  const context = 'discord:504135117296500746';
   const collections = [
-    { code: 'swt', name: 'Sweet', fixed_bonus: 100 },
-    { code: 'mrch', name: 'Merch', fixed_bonus: 500 },
-    { code: 'rare', name: 'Rare', fixed_bonus: 1500 },
-    { code: 'jyp', name: 'JYP', fixed_bonus: 5000 },
-    { code: 'lgnd', name: 'Legendary', fixed_bonus: 10000 },
+    { code: 'swt', name: 'Sweet', fixed_bonus: 100, context },
+    { code: 'mrch', name: 'Merch', fixed_bonus: 500, context },
+    { code: 'rare', name: 'Rare', fixed_bonus: 1500, context },
+    { code: 'jyp', name: 'JYP', fixed_bonus: 5000, context },
+    { code: 'lgnd', name: 'Legendary', fixed_bonus: 10000, context },
   ];
 
   await knex(collectionsTable).insert(collections);
