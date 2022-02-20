@@ -60,5 +60,5 @@ exports.up = async function(knex)
 exports.down = async function(knex)
 {
   await knex(collectionsTable).truncate();
-  await knex(coliteta).truncate();
+  await knex(collectionsItemsTable).truncate();
 };
