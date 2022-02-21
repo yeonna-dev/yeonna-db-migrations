@@ -11,7 +11,7 @@ exports.up = async function(knex)
     table.increments('pk_id');
 
     table.string('code').unique();
-    table.string('name').unique();
+    table.string('name').index();
     table.decimal('price').defaultTo(0);
     table.decimal('chance_min');
     table.decimal('chance_max');
