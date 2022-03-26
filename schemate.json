@@ -15,6 +15,9 @@
     },
     "items": {
       "migrationsDir": "migrations/items"
+    },
+    "streaks": {
+      "migrationsDir": "migrations/streaks"
     }
   }
 }
