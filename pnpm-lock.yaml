@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   dotenv: ^10.0.0
   knex: ^0.95.6
+  nanoid-good: ^3.1.0
   pg: ^8.6.0
 
 dependencies:
@@ -11,6 +12,7 @@ dependencies:
 
 devDependencies:
   dotenv: 10.0.0
+  nanoid-good: 3.1.0
 
 packages:
 
@@ -132,6 +134,23 @@ packages:
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
     dev: false
+
+  /nanoid-good/3.1.0:
+    resolution: {integrity: sha512-gG9D+AVHAZ+t2mAk3sw+Bx08VzOBc8fc+JylIzCLbEoRYakvQK9RiI3U+bXjdlMc5Ec4W9zUQsZZKngjifv7Vw==}
+    dependencies:
+      nanoid: 3.3.2
+      naughty-words: 1.2.0
+    dev: true
+
+  /nanoid/3.3.2:
+    resolution: {integrity: sha512-CuHBogktKwpm5g2sRgv83jEy2ijFzBwMoYA60orPDR7ynsLijJDqgsi4RDGj3OJpy3Ieb+LYwiRmIOGyytgITA==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+    dev: true
+
+  /naughty-words/1.2.0:
+    resolution: {integrity: sha512-0iadX6fN+3NsfvIRtWmmpEX9VsoIQ6n9FwyIxmew9w5yzFNqMgs/Ky0eAC/z5xXSHtqlVoByiovdROikwH9SXQ==}
+    dev: true
 
   /packet-reader/1.0.0:
     resolution: {integrity: sha512-HAKu/fG3HpHFO0AA8WE8q2g+gBJaZ9MG7fcKk+IJPLTGAD6Psw4443l+9DGRbOIh3/aXr7Phy0TjilYivJo5XQ==}

@@ -18,6 +18,9 @@
     },
     "streaks": {
       "migrationsDir": "migrations/streaks"
+    },
+    "common": {
+      "migrationsDir": "migrations/common/"
     }
   }
 }

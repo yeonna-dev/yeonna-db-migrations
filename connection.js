@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '.env.db' });
+require('dotenv').config();
 
 import knex from 'knex';
 
