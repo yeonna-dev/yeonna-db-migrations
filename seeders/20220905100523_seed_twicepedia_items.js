@@ -362,12 +362,236 @@ let legendaryItems = [
 ];
 
 /* Collections */
+const collectionCodes =
+{
+  sweet: `${codePrefix}swt`,
+  plushie: `${codePrefix}pl`,
+  lovelys: `${codePrefix}lvl`,
+  album: `${codePrefix}alb`,
+  twice: `${codePrefix}tw`,
+  nayeon: `${codePrefix}ny`,
+  jeongyeon: `${codePrefix}jy`,
+  momo: `${codePrefix}mm`,
+  sana: `${codePrefix}sn`,
+  jihyo: `${codePrefix}jh`,
+  mina: `${codePrefix}mn`,
+  dahyun: `${codePrefix}dh`,
+  chaeyoung: `${codePrefix}ch`,
+  tzuyu: `${codePrefix}tz`,
+  momoSpecial: `${codePrefix}mms`,
+  yesOrYes: `${codePrefix}yoy`,
+  likey: `${codePrefix}lky`,
+  jyp: `${codePrefix}jyp`,
+};
+
 const collections = [
-  { code: 'lc:swt', name: 'Sweet', fixed_bonus: 100, context },
-  { code: 'lc:mrch', name: 'Merch', fixed_bonus: 500, context },
-  { code: 'lc:rare', name: 'Rare', fixed_bonus: 1500, context },
-  { code: 'lc:jyp', name: 'JYP', fixed_bonus: 5000, context },
-  { code: 'lc:lgnd', name: 'Legendary', fixed_bonus: 10000, context },
+  {
+    name: "Sweet",
+    code: `${codePrefix}swt`,
+    description: "All 18 candies and jellies of all members.",
+    fixed_bonus: 500,
+    context,
+  },
+  {
+    name: "Plushie",
+    code: `${codePrefix}pl`,
+    description: "All 9 plushies, 1 per member.",
+    fixed_bonus: 3000,
+    context,
+  },
+  {
+    name: "Lovelys",
+    code: `${codePrefix}lvl`,
+    description: "All 9 lovelys, 1 per member.",
+    fixed_bonus: 5000,
+    context,
+  },
+  {
+    name: "Album",
+    code: `${codePrefix}alb`,
+    description: `All the albums and EPs. (Do the \`albums\` command to see all albums and EPs.)`,
+    fixed_bonus: 7000,
+    context,
+  },
+  {
+    name: "TWICE",
+    code: `${codePrefix}tw`,
+    description: "All photocards and posters of each member.",
+    fixed_bonus: 9000,
+    context,
+  },
+  {
+    name: "Nayeon",
+    code: `${codePrefix}ny`,
+    description: "The plushie, photocard, poster and rare item of a member."
+      + " (9 collections, 1 per member)",
+    fixed_bonus: 4000,
+    context,
+  },
+  {
+    name: "Jeongyeon",
+    code: `${codePrefix}jy`,
+    description: "The plushie, photocard, poster and rare item of a member."
+      + " (9 collections, 1 per member)",
+    fixed_bonus: 4000,
+    context,
+  },
+  {
+    name: "Momo",
+    code: `${codePrefix}mm`,
+    description: "The plushie, photocard, poster and rare item of a member."
+      + " (9 collections, 1 per member)",
+    fixed_bonus: 4000,
+    context,
+  },
+  {
+    name: "Sana",
+    code: `${codePrefix}sn`,
+    description: "The plushie, photocard, poster and rare item of a member."
+      + " (9 collections, 1 per member)",
+    fixed_bonus: 4000,
+    context,
+  },
+  {
+    name: "Jihyo",
+    code: `${codePrefix}jh`,
+    description: "The plushie, photocard, poster and rare item of a member."
+      + " (9 collections, 1 per member)",
+    fixed_bonus: 4000,
+    context,
+  },
+  {
+    name: "Mina",
+    code: `${codePrefix}mn`,
+    description: "The plushie, photocard, poster and rare item of a member."
+      + " (9 collections, 1 per member)",
+    fixed_bonus: 4000,
+    context,
+  },
+  {
+    name: "Dahyun",
+    code: `${codePrefix}dh`,
+    description: "The plushie, photocard, poster and rare item of a member."
+      + " (9 collections, 1 per member)",
+    fixed_bonus: 7000,
+    context,
+  },
+  {
+    name: "Chaeyoung",
+    code: `${codePrefix}ch`,
+    description: "The plushie, photocard, poster and rare item of a member."
+      + " (9 collections, 1 per member)",
+    fixed_bonus: 4000,
+    context,
+  },
+  {
+    name: "Tzuyu",
+    code: `${codePrefix}tz`,
+    description: "The plushie, photocard, poster and rare item of a member."
+      + " (9 collections, 1 per member)",
+    fixed_bonus: 4000,
+    context,
+  },
+  {
+    name: "Nayeon Special",
+    code: `${codePrefix}nys`,
+    description: 'The photocard, rare item and legendary item of a member.'
+      + ' (9 collections, 1 per member)',
+    fixed_bonus: 7000,
+    context,
+  },
+  {
+    name: "Jeongyeon Special",
+    code: `${codePrefix}jys`,
+    description: 'The photocard, rare item and legendary item of a member.'
+      + ' (9 collections, 1 per member)',
+    fixed_bonus: 7000,
+    context,
+  },
+  {
+    name: "Momo Special",
+    code: `${codePrefix}mms`,
+    description: 'The photocard, rare item and legendary item of a member.'
+      + ' (9 collections, 1 per member)',
+    fixed_bonus: 7000,
+    context,
+  },
+  {
+    name: "Sana Special",
+    code: `${codePrefix}sns`,
+    description: 'The photocard, rare item and legendary item of a member.'
+      + ' (9 collections, 1 per member)',
+    fixed_bonus: 7000,
+    context,
+  },
+  {
+    name: "Jihyo Special",
+    code: `${codePrefix}jhs`,
+    description: 'The photocard, rare item and legendary item of a member.'
+      + ' (9 collections, 1 per member)',
+    fixed_bonus: 7000,
+    context,
+  },
+  {
+    name: "Mina Special",
+    code: `${codePrefix}mns`,
+    description: 'The photocard, rare item and legendary item of a member.'
+      + ' (9 collections, 1 per member)',
+    fixed_bonus: 7000,
+    context,
+  },
+  {
+    name: "Dahyun Special",
+    code: `${codePrefix}dhs`,
+    description: 'The photocard, rare item and legendary item of a member.'
+      + ' (9 collections, 1 per member)',
+    fixed_bonus: 7000,
+    context,
+  },
+  {
+    name: "Chaeyoung Special",
+    code: `${codePrefix}chs`,
+    description: 'The photocard, rare item and legendary item of a member.'
+      + ' (9 collections, 1 per member)',
+    fixed_bonus: 7000,
+    context,
+  },
+  {
+    name: "Tzuyu Special",
+    code: `${codePrefix}tzs`,
+    description: 'The photocard, rare item and legendary item of a member.'
+      + ' (9 collections, 1 per member)',
+    fixed_bonus: 7000,
+    context,
+  },
+  {
+    name: "Cheer Up",
+    code: `${codePrefix}chr`,
+    description: 'Page Two Album and Cheer Up Jacket.',
+    fixed_bonus: 5000,
+    context,
+  },
+  {
+    name: "Yes or Yes",
+    code: `${codePrefix}yoy`,
+    description: 'Yes or Yes Album and Yes or Yes Dice.',
+    fixed_bonus: 5000,
+    context,
+  },
+  {
+    name: "Likey",
+    code: `${codePrefix}lky`,
+    description: 'Twicetagram Album and Likey Video Camera.',
+    fixed_bonus: 5000,
+    context,
+  },
+  {
+    name: "JYP",
+    code: `${codePrefix}jyp`,
+    description: 'What Is Love? Album, Signal Album, JYP Plastic Pants and JYP\'s MIDI Keyboard.',
+    fixed_bonus: 15000,
+    context,
+  }
 ];
 
 /* Collections Items */
@@ -475,7 +699,7 @@ exports.up = async function(knex)
   }
 
   await knex(itemsTable).insert(items);
-  // await knex(collectionsTable).insert(collections);
+  await knex(collectionsTable).insert(collections);
   // await knex(collectionsItemsTable).insert(collectionsItems);
 };
 
