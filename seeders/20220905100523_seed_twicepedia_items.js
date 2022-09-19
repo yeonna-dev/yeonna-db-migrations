@@ -303,7 +303,7 @@ const posters = members.map(({ code, name }) => ({
   context,
 }));
 
-const lovelies = members.map(({ code, name }) => ({
+const lovelys = members.map(({ code, name }) => ({
   code: `${codePrefix}${code}-lv`,
   name: `${name} Lovely`,
   chance_min: 6,
@@ -326,7 +326,7 @@ let goodItems = [
 let amazingItems = [
   ...photocards,
   ...posters,
-  ...lovelies,
+  ...lovelys,
 ];
 
 let rareItems = [
@@ -378,7 +378,16 @@ const collectionCodes =
   dahyun: `${codePrefix}dh`,
   chaeyoung: `${codePrefix}ch`,
   tzuyu: `${codePrefix}tz`,
+  nayeonSpecial: `${codePrefix}nys`,
+  jeongyeonSpecial: `${codePrefix}jys`,
   momoSpecial: `${codePrefix}mms`,
+  sanaSpecial: `${codePrefix}sns`,
+  jihyoSpecial: `${codePrefix}jhs`,
+  minaSpecial: `${codePrefix}mns`,
+  dahyunSpecial: `${codePrefix}dhs`,
+  chaeyoungSpecial: `${codePrefix}chs`,
+  tzuyuSpecial: `${codePrefix}tzs`,
+  cheerUp: `${codePrefix}chr`,
   yesOrYes: `${codePrefix}yoy`,
   likey: `${codePrefix}lky`,
   jyp: `${codePrefix}jyp`,
@@ -387,42 +396,42 @@ const collectionCodes =
 const collections = [
   {
     name: "Sweet",
-    code: `${codePrefix}swt`,
+    code: collectionCodes.sweet,
     description: "All 18 candies and jellies of all members.",
     fixed_bonus: 500,
     context,
   },
   {
     name: "Plushie",
-    code: `${codePrefix}pl`,
+    code: collectionCodes.plushie,
     description: "All 9 plushies, 1 per member.",
     fixed_bonus: 3000,
     context,
   },
   {
     name: "Lovelys",
-    code: `${codePrefix}lvl`,
+    code: collectionCodes.lovelys,
     description: "All 9 lovelys, 1 per member.",
     fixed_bonus: 5000,
     context,
   },
   {
     name: "Album",
-    code: `${codePrefix}alb`,
+    code: collectionCodes.album,
     description: `All the albums and EPs. (Do the \`albums\` command to see all albums and EPs.)`,
     fixed_bonus: 7000,
     context,
   },
   {
     name: "TWICE",
-    code: `${codePrefix}tw`,
+    code: collectionCodes.twice,
     description: "All photocards and posters of each member.",
     fixed_bonus: 9000,
     context,
   },
   {
     name: "Nayeon",
-    code: `${codePrefix}ny`,
+    code: collectionCodes.nayeon,
     description: "The plushie, photocard, poster and rare item of a member."
       + " (9 collections, 1 per member)",
     fixed_bonus: 4000,
@@ -430,7 +439,7 @@ const collections = [
   },
   {
     name: "Jeongyeon",
-    code: `${codePrefix}jy`,
+    code: collectionCodes.jeongyeon,
     description: "The plushie, photocard, poster and rare item of a member."
       + " (9 collections, 1 per member)",
     fixed_bonus: 4000,
@@ -438,7 +447,7 @@ const collections = [
   },
   {
     name: "Momo",
-    code: `${codePrefix}mm`,
+    code: collectionCodes.momo,
     description: "The plushie, photocard, poster and rare item of a member."
       + " (9 collections, 1 per member)",
     fixed_bonus: 4000,
@@ -446,7 +455,7 @@ const collections = [
   },
   {
     name: "Sana",
-    code: `${codePrefix}sn`,
+    code: collectionCodes.sana,
     description: "The plushie, photocard, poster and rare item of a member."
       + " (9 collections, 1 per member)",
     fixed_bonus: 4000,
@@ -454,7 +463,7 @@ const collections = [
   },
   {
     name: "Jihyo",
-    code: `${codePrefix}jh`,
+    code: collectionCodes.jihyo,
     description: "The plushie, photocard, poster and rare item of a member."
       + " (9 collections, 1 per member)",
     fixed_bonus: 4000,
@@ -462,7 +471,7 @@ const collections = [
   },
   {
     name: "Mina",
-    code: `${codePrefix}mn`,
+    code: collectionCodes.mina,
     description: "The plushie, photocard, poster and rare item of a member."
       + " (9 collections, 1 per member)",
     fixed_bonus: 4000,
@@ -470,7 +479,7 @@ const collections = [
   },
   {
     name: "Dahyun",
-    code: `${codePrefix}dh`,
+    code: collectionCodes.dahyun,
     description: "The plushie, photocard, poster and rare item of a member."
       + " (9 collections, 1 per member)",
     fixed_bonus: 7000,
@@ -478,7 +487,7 @@ const collections = [
   },
   {
     name: "Chaeyoung",
-    code: `${codePrefix}ch`,
+    code: collectionCodes.chaeyoung,
     description: "The plushie, photocard, poster and rare item of a member."
       + " (9 collections, 1 per member)",
     fixed_bonus: 4000,
@@ -486,7 +495,7 @@ const collections = [
   },
   {
     name: "Tzuyu",
-    code: `${codePrefix}tz`,
+    code: collectionCodes.tzuyu,
     description: "The plushie, photocard, poster and rare item of a member."
       + " (9 collections, 1 per member)",
     fixed_bonus: 4000,
@@ -494,7 +503,7 @@ const collections = [
   },
   {
     name: "Nayeon Special",
-    code: `${codePrefix}nys`,
+    code: collectionCodes.nayeonSpecial,
     description: 'The photocard, rare item and legendary item of a member.'
       + ' (9 collections, 1 per member)',
     fixed_bonus: 7000,
@@ -502,7 +511,7 @@ const collections = [
   },
   {
     name: "Jeongyeon Special",
-    code: `${codePrefix}jys`,
+    code: collectionCodes.jeongyeonSpecial,
     description: 'The photocard, rare item and legendary item of a member.'
       + ' (9 collections, 1 per member)',
     fixed_bonus: 7000,
@@ -510,7 +519,7 @@ const collections = [
   },
   {
     name: "Momo Special",
-    code: `${codePrefix}mms`,
+    code: collectionCodes.momoSpecial,
     description: 'The photocard, rare item and legendary item of a member.'
       + ' (9 collections, 1 per member)',
     fixed_bonus: 7000,
@@ -518,7 +527,7 @@ const collections = [
   },
   {
     name: "Sana Special",
-    code: `${codePrefix}sns`,
+    code: collectionCodes.sanaSpecial,
     description: 'The photocard, rare item and legendary item of a member.'
       + ' (9 collections, 1 per member)',
     fixed_bonus: 7000,
@@ -526,7 +535,7 @@ const collections = [
   },
   {
     name: "Jihyo Special",
-    code: `${codePrefix}jhs`,
+    code: collectionCodes.jihyoSpecial,
     description: 'The photocard, rare item and legendary item of a member.'
       + ' (9 collections, 1 per member)',
     fixed_bonus: 7000,
@@ -534,7 +543,7 @@ const collections = [
   },
   {
     name: "Mina Special",
-    code: `${codePrefix}mns`,
+    code: collectionCodes.minaSpecial,
     description: 'The photocard, rare item and legendary item of a member.'
       + ' (9 collections, 1 per member)',
     fixed_bonus: 7000,
@@ -542,7 +551,7 @@ const collections = [
   },
   {
     name: "Dahyun Special",
-    code: `${codePrefix}dhs`,
+    code: collectionCodes.dahyunSpecial,
     description: 'The photocard, rare item and legendary item of a member.'
       + ' (9 collections, 1 per member)',
     fixed_bonus: 7000,
@@ -550,7 +559,7 @@ const collections = [
   },
   {
     name: "Chaeyoung Special",
-    code: `${codePrefix}chs`,
+    code: collectionCodes.chaeyoungSpecial,
     description: 'The photocard, rare item and legendary item of a member.'
       + ' (9 collections, 1 per member)',
     fixed_bonus: 7000,
@@ -558,7 +567,7 @@ const collections = [
   },
   {
     name: "Tzuyu Special",
-    code: `${codePrefix}tzs`,
+    code: collectionCodes.tzuyuSpecial,
     description: 'The photocard, rare item and legendary item of a member.'
       + ' (9 collections, 1 per member)',
     fixed_bonus: 7000,
@@ -566,28 +575,28 @@ const collections = [
   },
   {
     name: "Cheer Up",
-    code: `${codePrefix}chr`,
+    code: collectionCodes.cheerUp,
     description: 'Page Two Album and Cheer Up Jacket.',
     fixed_bonus: 5000,
     context,
   },
   {
     name: "Yes or Yes",
-    code: `${codePrefix}yoy`,
+    code: collectionCodes.yesOrYes,
     description: 'Yes or Yes Album and Yes or Yes Dice.',
     fixed_bonus: 5000,
     context,
   },
   {
     name: "Likey",
-    code: `${codePrefix}lky`,
+    code: collectionCodes.likey,
     description: 'Twicetagram Album and Likey Video Camera.',
     fixed_bonus: 5000,
     context,
   },
   {
     name: "JYP",
-    code: `${codePrefix}jyp`,
+    code: collectionCodes.jyp,
     description: 'What Is Love? Album, Signal Album, JYP Plastic Pants and JYP\'s MIDI Keyboard.',
     fixed_bonus: 15000,
     context,
@@ -596,6 +605,22 @@ const collections = [
 
 /* Collections Items */
 const collectionsItems = [
+  /* Sweet Collection */
+  ...niceItems.map(({ code }) => ({ collection_code: collectionCodes.sweet, item_code: code })),
+
+  /* Plushie Collection */
+  ...plushies.map(({ code }) => ({ collection_code: collectionCodes.plushie, item_code: code })),
+
+  /* Lovelys Collection */
+  ...lovelys.map(({ code }) => ({ collection_code: collectionCodes.lovelys, item_code: code })),
+
+  /* Album Collection */
+  ...albums.map(({ code }) => ({ collection_code: collectionCodes.album, item_code: code })),
+
+  /* TWICE Collection */
+  ...photocards.map(({ code }) => ({ collection_code: collectionCodes.twice, item_code: code })),
+  ...posters.map(({ code }) => ({ collection_code: collectionCodes.twice, item_code: code })),
+
   { collection_code: 'lc:swt', item_code: 'lc:c' },
   { collection_code: 'lc:swt', item_code: 'lc:j' },
   { collection_code: 'lc:swt', item_code: 'lc:sb' },
