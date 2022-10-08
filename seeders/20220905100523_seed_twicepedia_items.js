@@ -1,14 +1,12 @@
 const en = require('nanoid-good/locale/en');
 const nanoid = require('nanoid-good').nanoid(en);
-const fs = require('fs');
+const items = require('../datasets/twicepedia/items.json');
+const collections = require('../datasets/twicepedia/collections.json');
 
 const itemsTable = 'items';
 const collectionsTable = 'collections';
 const collectionsItemsTable = 'collections_items';
 const categoriesTable = 'categories';
-
-const context = 'discord:533510632985853953';
-const codePrefix = 'tp:';
 
 const newCategoryNames = [
   'Nice',
@@ -22,296 +20,105 @@ const categoryNames = [
   'Legendary',
 ];
 
-const members = [
-  {
-    code: 'ny',
-    name: 'Nayeon',
-    hangul: '나연',
-    animal: 'Bunny',
-    emote: '🐰',
-    photocard: 'https://i.imgur.com/iNX9ErD.jpg',
-    poster: 'https://i.imgur.com/loE6BZX.jpg',
-    lovely: 'https://i.imgur.com/qakDPak.png'
-  },
-  {
-    code: 'jy',
-    name: 'Jeongyeon',
-    hangul: '정연',
-    animal: 'Dragon',
-    emote: '🐲',
-    photocard: 'https://i.imgur.com/pA54JXE.jpg',
-    poster: 'https://i.imgur.com/FXegKZo.jpg',
-    lovely: 'https://i.imgur.com/7fu6jQ5.png'
-  },
-  {
-    code: 'mm',
-    name: 'Momo',
-    hangul: '모모',
-    animal: 'Pig',
-    emote: '🐷',
-    photocard: 'https://i.imgur.com/ZNXbMOZ.jpg',
-    poster: 'https://i.imgur.com/trfa56Z.jpg',
-    lovely: 'https://i.imgur.com/1TVTJW5.png'
-  },
-  {
-    code: 'sn',
-    name: 'Sana',
-    hangul: '사나',
-    animal: 'Squirrel',
-    emote: '🐿',
-    photocard: 'https://i.imgur.com/wTi3BoN.jpg',
-    poster: 'https://i.imgur.com/ab0c1za.jpg',
-    lovely: 'https://i.imgur.com/PVhqXSC.png'
-  },
-  {
-    code: 'jh',
-    name: 'Jihyo',
-    hangul: '지효',
-    animal: 'Unicorn',
-    emote: '🦄',
-    photocard: 'https://i.imgur.com/2w7UaID.jpg',
-    poster: 'https://i.imgur.com/TC3qOnd.jpg',
-    lovely: 'https://i.imgur.com/cAx4waP.png'
-  },
-  {
-    code: 'mn',
-    name: 'Mina',
-    hangul: '미나',
-    animal: 'Penguin',
-    emote: '🐧',
-    photocard: 'https://i.imgur.com/pZfwokN.jpg',
-    poster: 'https://i.imgur.com/8RR64UD.jpg',
-    lovely: 'https://i.imgur.com/765azWY.png'
-  },
-  {
-    code: 'dh',
-    name: 'Dahyun',
-    hangul: '다현',
-    animal: 'Eagle',
-    emote: '🦅',
-    photocard: 'https://i.imgur.com/ax1G8UG.jpg',
-    poster: 'https://i.imgur.com/gXDt6ur.jpg',
-    lovely: 'https://i.imgur.com/kIEhn2X.png'
-  },
-  {
-    code: 'ch',
-    name: 'Chaeyoung',
-    hangul: '채영',
-    animal: 'Tiger',
-    emote: '🐯',
-    photocard: 'https://i.imgur.com/3f62mR5.jpg',
-    poster: 'https://i.imgur.com/XeTSFwd.jpg',
-    lovely: 'https://i.imgur.com/loq4gWB.png'
-  },
-  {
-    code: 'tz',
-    name: 'Tzuyu',
-    hangul: '쯔위',
-    animal: 'Puppy',
-    emote: '🐶',
-    photocard: 'https://i.imgur.com/JpqJVKL.jpg',
-    poster: 'https://i.imgur.com/GUjUPk0.jpg',
-    lovely: 'https://i.imgur.com/5Fm2DQM.png'
-  }
+const candies = [
+  items['Nayeon Candy'],
+  items['Jeongyeon Candy'],
+  items['Momo Candy'],
+  items['Sana Candy'],
+  items['Jihyo Candy'],
+  items['Mina Candy'],
+  items['Dahyun Candy'],
+  items['Chaeyoung Candy'],
+  items['Tzuyu Candy'],
 ];
 
-const albumsList = [
-  {
-    code: 'tsb',
-    title: 'The Story Begins',
-    cover: 'https://i.scdn.co/image/82fcd832c095f99ee8fd751f81d0a2f93208e1d4'
-  },
-  {
-    code: 'pgt',
-    title: 'Page Two',
-    cover: 'https://i.scdn.co/image/9c581e4951265c3c7a768e72519be88947758755'
-  },
-  {
-    code: 'tc1',
-    title: 'TWICEcoaster: Lane 1',
-    cover: 'https://i.scdn.co/image/6551b45b4e5a692f61cd42357e7f9b08753430f9'
-  },
-  {
-    code: 'tc2',
-    title: 'TWICEcoaster: Lane 2',
-    cover: 'https://i.scdn.co/image/8ed6a0c95f39ded5003aac8598797563992ecb00'
-  },
-  {
-    code: 'sgl',
-    title: 'Signal',
-    cover: 'https://i.scdn.co/image/770c9b5ddc0a151bf255406b7285abb121dd7a30'
-  },
-  {
-    code: 'twt',
-    title: 'Twicetagram',
-    cover: 'https://i.scdn.co/image/1c2eba4f54e9a90e797ace930676ef6cd87d1779'
-  },
-  {
-    code: 'mnh',
-    title: 'Merry & Happy',
-    cover: 'https://i.scdn.co/image/a7fc15227ce39023c5e3d356efb29e327957cea4'
-  },
-  {
-    code: 'wil',
-    title: 'What Is Love?',
-    cover: 'https://i.scdn.co/image/14e0b19c0cfb689d914ea021a393f25d77f6eeb8'
-  },
-  {
-    code: 'smn',
-    title: 'Summer Nights',
-    cover: 'https://i.scdn.co/image/671e629019a12e2a1f7cf7a0c86d0a44cb6a8e58'
-  },
-  {
-    code: 'bdz',
-    title: 'BDZ',
-    cover: 'https://i.scdn.co/image/699818ea7635b25d277861b9ec40602965efd1a3'
-  },
-  {
-    code: 'bdr',
-    title: 'BDZ (Repackage)',
-    cover: 'https://i.scdn.co/image/77eb7c17cafe5503c514c0b7e2b942f6588f4eae'
-  },
-  {
-    code: 'yoy',
-    title: 'Yes or Yes',
-    cover: 'https://i.scdn.co/image/67cc1debed5c16a0801d83aed07da2d01a9fa20c'
-  },
-  {
-    code: 'tyy',
-    title: 'The Year of \'YES\'',
-    cover: 'https://i.scdn.co/image/a9c13fb328423c703d26b8d98a8c6987e4242404'
-  },
-  {
-    code: 'fcy',
-    title: 'Fancy You',
-    cover: 'https://i.scdn.co/image/856711b1103e8c8a2042198191f96fc8e47715d5'
-  },
-  {
-    code: 'fsp',
-    title: 'Feel Special',
-    cover: 'https://i.scdn.co/image/2672add02cdf23f490a3911b837e733a48f66971'
-  },
-  {
-    code: 'mnm',
-    title: 'More & More',
-    cover: 'https://i.scdn.co/image/ab67616d0000b27328e649c0e2d1a3a98ccf8ea3'
-  },
-  {
-    code: 'cdp',
-    title: 'Candy Pop',
-    cover: 'https://i.scdn.co/image/ebc421247e260e1a846bd48e05fbfbbae440f339'
-  },
-  {
-    code: 'omt',
-    title: 'One More Time',
-    cover: 'https://i.scdn.co/image/3c3039d6c443b2945f39fda304bd9f81881d4c0c'
-  },
-  {
-    code: 'wmu',
-    title: 'Wake Me Up',
-    cover: 'https://i.scdn.co/image/eba07320c308e7a3d0009e670aaa9c646980df67'
-  },
-  {
-    code: 'htt',
-    title: '#TWICE',
-    cover: 'https://i.scdn.co/image/6333e7e989d68e665f512f3ca29f389dad6860ff'
-  },
-  {
-    code: 'ht2',
-    title: '#TWICE2',
-    cover: 'https://i.scdn.co/image/068b02a90e73c68025ac04abb3e784ea29e53b15'
-  },
-  {
-    code: 'bth',
-    title: 'Breakthrough',
-    cover: 'https://i.scdn.co/image/6ecee0db960d381e8c51b1a3d1d99a8d71d154c3'
-  },
-  {
-    code: 'hph',
-    title: 'HAPPY HAPPY',
-    cover: 'https://i.scdn.co/image/52043f529df82e4af5f25c4a1f58fa5060bdba6a'
-  },
-  {
-    code: 'ntw',
-    title: '&TWICE',
-    cover: 'https://i.scdn.co/image/ab67616d0000b27329e7568dbd16f270b3d96db4'
-  },
-  {
-    code: 'fnf',
-    title: 'Fanfare',
-    cover: 'https://i.scdn.co/image/ab67616d0000b273dd4a6d26627cc697b3f4d8be'
-  }
+const jellies = [
+  items['Nayeon Jelly'],
+  items['Jeongyeon Jelly'],
+  items['Momo Jelly'],
+  items['Sana Jelly'],
+  items['Jihyo Jelly'],
+  items['Mina Jelly'],
+  items['Dahyun Jelly'],
+  items['Chaeyoung Jelly'],
+  items['Tzuyu Jelly'],
 ];
 
-const candies = members.map(({ code, name }) => ({
-  code: `${codePrefix}${code}-c`,
-  name: `${name} Candy`,
-  chance_min: 36,
-  chance_max: 65,
-  price: 10,
-  emote: '🍬',
-  context,
-}));
+const plushies = [
+  items['Nayeon Bunny Plushie'],
+  items['Jeongyeon Dragon Plushie'],
+  items['Momo Pig Plushie'],
+  items['Sana Squirrel Plushie'],
+  items['Jihyo Unicorn Plushie'],
+  items['Mina Penguin Plushie'],
+  items['Dahyun Eagle Plushie'],
+  items['Chaeyoung Tiger Plushie'],
+  items['Tzuyu Puppy Plushie'],
+];
 
-const jellies = members.map(({ code, name }) => ({
-  code: `${codePrefix}${code}-j`,
-  name: `${name} Jelly`,
-  chance_min: 36,
-  chance_max: 65,
-  price: 10,
-  emote: '🍓',
-  context,
-}));
+const albums = [
+  items['The Story Begins Album'],
+  items['Page Two Album'],
+  items['TWICEcoaster: Lane 1 Album'],
+  items['TWICEcoaster: Lane 2 Album'],
+  items['Signal Album'],
+  items['Twicetagram Album'],
+  items['Merry & Happy Album'],
+  items['What Is Love? Album'],
+  items['Summer Nights Album'],
+  items['BDZ Album'],
+  items['BDZ (Repackage) Album'],
+  items['Yes or Yes Album'],
+  items['The Year of "YES" Album'],
+  items['Fancy You Album'],
+  items['Feel Special Album'],
+  items['More & More Album'],
+  items['Candy Pop Album'],
+  items['One More Time Album'],
+  items['Wake Me Up Album'],
+  items['#TWICE Album'],
+  items['#TWICE2 Album'],
+  items['Breakthrough Album'],
+  items['HAPPY HAPPY Album'],
+  items['&TWICE Album'],
+  items['Fanfare Album'],
+];
 
-const plushies = members.map(({ code, name, animal, emote }) => ({
-  code: `${codePrefix}${code}-p`,
-  name: `${name} ${animal} Plushie`,
-  chance_min: 15,
-  chance_max: 35,
-  price: 100,
-  emote,
-  context,
-}));
+const photocards = [
+  items['Nayeon Photocard'],
+  items['Jeongyeon Photocard'],
+  items['Momo Photocard'],
+  items['Sana Photocard'],
+  items['Jihyo Photocard'],
+  items['Mina Photocard'],
+  items['Dahyun Photocard'],
+  items['Chaeyoung Photocard'],
+  items['Tzuyu Photocard'],
+];
 
-const albums = albumsList.map(({ code, title }) => ({
-  code: `${codePrefix}${code}-a`,
-  name: `${title}`,
-  price: 100,
-  chance_min: 15,
-  chance_max: 35,
-  emote: '💿',
-  context,
-}));
+const posters = [
+  items['Nayeon Poster'],
+  items['Jeongyeon Poster'],
+  items['Momo Poster'],
+  items['Sana Poster'],
+  items['Jihyo Poster'],
+  items['Mina Poster'],
+  items['Dahyun Poster'],
+  items['Chaeyoung Poster'],
+  items['Tzuyu Poster'],
+];
 
-const photocards = members.map(({ code, name }) => ({
-  code: `${codePrefix}${code}-pc`,
-  name: `${name} Photocard`,
-  chance_min: 6,
-  chance_max: 14,
-  price: 200,
-  emote: '🎞',
-  context,
-}));
-
-const posters = members.map(({ code, name }) => ({
-  code: `${codePrefix}${code}-ps`,
-  name: `${name} Poster`,
-  chance_min: 6,
-  chance_max: 14,
-  price: 200,
-  emote: '🖼',
-  context,
-}));
-
-const lovelys = members.map(({ code, name }) => ({
-  code: `${codePrefix}${code}-lv`,
-  name: `${name} Lovely`,
-  chance_min: 6,
-  chance_max: 14,
-  price: 200,
-  emote: '💗',
-  context,
-}));
+const lovelys = [
+  items['Nayeon Lovely'],
+  items['Jeongyeon Lovely'],
+  items['Momo Lovely'],
+  items['Sana Lovely'],
+  items['Jihyo Lovely'],
+  items['Mina Lovely'],
+  items['Dahyun Lovely'],
+  items['Chaeyoung Lovely'],
+  items['Tzuyu Lovely'],
+];
 
 let niceItems = [
   ...candies,
@@ -330,348 +137,242 @@ let amazingItems = [
 ];
 
 let rareItems = [
-  { code: `${codePrefix}mc`, name: 'MC Rail Cap', chance_min: 0.6, chance_max: 5, price: 750, image: 'https://i.imgur.com/papUxvz.png', context },
-  { code: `${codePrefix}jk`, name: 'Jokbal', chance_min: 0.6, chance_max: 5, price: 750, image: 'https://i.imgur.com/XXocy8y.png', context },
-  { code: `${codePrefix}sb`, name: 'Strawberry', chance_min: 0.6, chance_max: 5, price: 750, image: 'https://i.imgur.com/MVvL7M1.png', context },
-  { code: `${codePrefix}cm`, name: 'Camera', chance_min: 0.6, chance_max: 5, price: 750, image: 'https://i.imgur.com/kCP8DD9.png', context },
-  { code: `${codePrefix}sx`, name: 'Saxophone', chance_min: 0.6, chance_max: 5, price: 750, image: 'https://i.imgur.com/r9Bn7Xn.png', context },
-  { code: `${codePrefix}ck`, name: 'Cheese Kimbap', chance_min: 0.6, chance_max: 5, price: 750, image: 'https://i.imgur.com/LHXMx6o.png', context },
-  { code: `${codePrefix}th`, name: 'Thomas the Train', chance_min: 0.6, chance_max: 5, price: 750, image: 'https://i.imgur.com/4AiC8zx.png', context },
-  { code: `${codePrefix}bw`, name: 'Archery Bow', chance_min: 0.6, chance_max: 5, price: 750, image: 'https://i.imgur.com/cEMhTQx.jpg', context },
-  { code: `${codePrefix}sw`, name: 'Black Swan', chance_min: 0.6, chance_max: 5, price: 750, image: 'https://i.imgur.com/qOufKJA.png', context },
+  items['MC Rail Cap'],
+  items.Jokbal,
+  items.Strawberry,
+  items.Camera,
+  items.Saxophone,
+  items['Cheese Kimbap'],
+  items['Thomas the Train'],
+  items['Archery Bow'],
+  items['Black Swan'],
 ];
 
 let legendaryItems = [
-  { code: `${codePrefix}jkb`, name: 'JYP\'s MIDI Keyboard', chance_min: 0, chance_max: 0.5, price: 4000, image: 'https://i.imgur.com/4PW4KE5.png', context },
-  { code: `${codePrefix}ptp`, name: 'JYP Plastic Pants', chance_min: 0, chance_max: 0.5, price: 4000, image: 'https://i.imgur.com/yEpLsr0.png', context },
-  { code: `${codePrefix}idl`, name: 'Idol Room Shirt', chance_min: 0, chance_max: 0.5, price: 4000, image: 'https://i.imgur.com/WY1TCJe.png', context },
-  { code: `${codePrefix}sxt`, name: 'Sixteen Necklace', chance_min: 0, chance_max: 0.5, price: 4000, image: 'https://i.imgur.com/uRinEh7.png', context },
-  { code: `${codePrefix}psw`, name: 'Pocari Sweat', chance_min: 0, chance_max: 0.5, price: 4000, image: 'https://i.imgur.com/bg0zHIp.png', context },
-  { code: `${codePrefix}yoy`, name: 'Yes or Yes Dice', chance_min: 0, chance_max: 0.5, price: 4000, image: 'https://i.imgur.com/EaE1r8L.png', context },
-  { code: `${codePrefix}chj`, name: 'Cheer Up Jacket', chance_min: 0, chance_max: 0.5, price: 4000, image: 'https://i.imgur.com/s0wo5mo.jpg', context },
-  { code: `${codePrefix}lkc`, name: 'Likey Video Camera', chance_min: 0, chance_max: 0.5, price: 4000, image: 'https://i.imgur.com/VJGe6oO.jpg', context },
-  { code: `${codePrefix}jhp`, name: 'Jihyo\'s Photobook', chance_min: 0, chance_max: 0.5, price: 4000, image: 'https://i.imgur.com/M3Sf2ew.png', context },
-  { code: `${codePrefix}chd`, name: 'Chaeyoung\'s Drawing', chance_min: 0, chance_max: 0.5, price: 4000, image: 'https://i.imgur.com/Ib23ete.jpg', context },
-  { code: `${codePrefix}mmc`, name: 'Momo\'s Circle', chance_min: 0, chance_max: 0.5, price: 4000, image: 'https://i.imgur.com/FecM5ob.png', context },
-  { code: `${codePrefix}dbc`, name: 'Dubu Cushion', chance_min: 0, chance_max: 0.5, price: 4000, image: 'https://i.ytimg.com/vi/Wqj15fbhKu4/maxresdefault.jpg', context },
-  { code: `${codePrefix}gci`, name: 'Gucci', chance_min: 0, chance_max: 0.5, price: 4000, image: 'https://i.imgur.com/JIfD9dH.png', context },
-  { code: `${codePrefix}kng`, name: 'Kkaengi', chance_min: 0, chance_max: 0.5, price: 4000, image: 'https://i.imgur.com/gax0X5t.png', context },
-  { code: `${codePrefix}sgt`, name: 'Sana\'s Green Tea', chance_min: 0, chance_max: 0.5, price: 4000, image: 'https://i.imgur.com/Bpo59eZ.png', context },
-  { code: `${codePrefix}jyl`, name: 'Jeongyeon\'s Legos', chance_min: 0, chance_max: 0.5, price: 4000, image: 'https://i.imgur.com/Gvi0yD7.png', context },
-  { code: `${codePrefix}mnl`, name: 'Mina\'s Laptop', chance_min: 0, chance_max: 0.5, price: 4000, image: 'https://i.imgur.com/ZTyTkiG.png', context },
-];
-
-/* Collections */
-const collectionCodes =
-{
-  sweet: `${codePrefix}swt`,
-  plushie: `${codePrefix}pl`,
-  lovelys: `${codePrefix}lvl`,
-  album: `${codePrefix}alb`,
-  twice: `${codePrefix}tw`,
-  nayeon: `${codePrefix}ny`,
-  jeongyeon: `${codePrefix}jy`,
-  momo: `${codePrefix}mm`,
-  sana: `${codePrefix}sn`,
-  jihyo: `${codePrefix}jh`,
-  mina: `${codePrefix}mn`,
-  dahyun: `${codePrefix}dh`,
-  chaeyoung: `${codePrefix}ch`,
-  tzuyu: `${codePrefix}tz`,
-  nayeonSpecial: `${codePrefix}nys`,
-  jeongyeonSpecial: `${codePrefix}jys`,
-  momoSpecial: `${codePrefix}mms`,
-  sanaSpecial: `${codePrefix}sns`,
-  jihyoSpecial: `${codePrefix}jhs`,
-  minaSpecial: `${codePrefix}mns`,
-  dahyunSpecial: `${codePrefix}dhs`,
-  chaeyoungSpecial: `${codePrefix}chs`,
-  tzuyuSpecial: `${codePrefix}tzs`,
-  cheerUp: `${codePrefix}chr`,
-  yesOrYes: `${codePrefix}yoy`,
-  likey: `${codePrefix}lky`,
-  jyp: `${codePrefix}jyp`,
-};
-
-const collections = [
-  {
-    name: "Sweet",
-    code: collectionCodes.sweet,
-    description: "All 18 candies and jellies of all members.",
-    fixed_bonus: 500,
-    context,
-  },
-  {
-    name: "Plushie",
-    code: collectionCodes.plushie,
-    description: "All 9 plushies, 1 per member.",
-    fixed_bonus: 3000,
-    context,
-  },
-  {
-    name: "Lovelys",
-    code: collectionCodes.lovelys,
-    description: "All 9 lovelys, 1 per member.",
-    fixed_bonus: 5000,
-    context,
-  },
-  {
-    name: "Album",
-    code: collectionCodes.album,
-    description: `All the albums and EPs. (Do the \`albums\` command to see all albums and EPs.)`,
-    fixed_bonus: 7000,
-    context,
-  },
-  {
-    name: "TWICE",
-    code: collectionCodes.twice,
-    description: "All photocards and posters of each member.",
-    fixed_bonus: 9000,
-    context,
-  },
-  {
-    name: "Nayeon",
-    code: collectionCodes.nayeon,
-    description: "The plushie, photocard, poster and rare item of a member."
-      + " (9 collections, 1 per member)",
-    fixed_bonus: 4000,
-    context,
-  },
-  {
-    name: "Jeongyeon",
-    code: collectionCodes.jeongyeon,
-    description: "The plushie, photocard, poster and rare item of a member."
-      + " (9 collections, 1 per member)",
-    fixed_bonus: 4000,
-    context,
-  },
-  {
-    name: "Momo",
-    code: collectionCodes.momo,
-    description: "The plushie, photocard, poster and rare item of a member."
-      + " (9 collections, 1 per member)",
-    fixed_bonus: 4000,
-    context,
-  },
-  {
-    name: "Sana",
-    code: collectionCodes.sana,
-    description: "The plushie, photocard, poster and rare item of a member."
-      + " (9 collections, 1 per member)",
-    fixed_bonus: 4000,
-    context,
-  },
-  {
-    name: "Jihyo",
-    code: collectionCodes.jihyo,
-    description: "The plushie, photocard, poster and rare item of a member."
-      + " (9 collections, 1 per member)",
-    fixed_bonus: 4000,
-    context,
-  },
-  {
-    name: "Mina",
-    code: collectionCodes.mina,
-    description: "The plushie, photocard, poster and rare item of a member."
-      + " (9 collections, 1 per member)",
-    fixed_bonus: 4000,
-    context,
-  },
-  {
-    name: "Dahyun",
-    code: collectionCodes.dahyun,
-    description: "The plushie, photocard, poster and rare item of a member."
-      + " (9 collections, 1 per member)",
-    fixed_bonus: 7000,
-    context,
-  },
-  {
-    name: "Chaeyoung",
-    code: collectionCodes.chaeyoung,
-    description: "The plushie, photocard, poster and rare item of a member."
-      + " (9 collections, 1 per member)",
-    fixed_bonus: 4000,
-    context,
-  },
-  {
-    name: "Tzuyu",
-    code: collectionCodes.tzuyu,
-    description: "The plushie, photocard, poster and rare item of a member."
-      + " (9 collections, 1 per member)",
-    fixed_bonus: 4000,
-    context,
-  },
-  {
-    name: "Nayeon Special",
-    code: collectionCodes.nayeonSpecial,
-    description: 'The photocard, rare item and legendary item of a member.'
-      + ' (9 collections, 1 per member)',
-    fixed_bonus: 7000,
-    context,
-  },
-  {
-    name: "Jeongyeon Special",
-    code: collectionCodes.jeongyeonSpecial,
-    description: 'The photocard, rare item and legendary item of a member.'
-      + ' (9 collections, 1 per member)',
-    fixed_bonus: 7000,
-    context,
-  },
-  {
-    name: "Momo Special",
-    code: collectionCodes.momoSpecial,
-    description: 'The photocard, rare item and legendary item of a member.'
-      + ' (9 collections, 1 per member)',
-    fixed_bonus: 7000,
-    context,
-  },
-  {
-    name: "Sana Special",
-    code: collectionCodes.sanaSpecial,
-    description: 'The photocard, rare item and legendary item of a member.'
-      + ' (9 collections, 1 per member)',
-    fixed_bonus: 7000,
-    context,
-  },
-  {
-    name: "Jihyo Special",
-    code: collectionCodes.jihyoSpecial,
-    description: 'The photocard, rare item and legendary item of a member.'
-      + ' (9 collections, 1 per member)',
-    fixed_bonus: 7000,
-    context,
-  },
-  {
-    name: "Mina Special",
-    code: collectionCodes.minaSpecial,
-    description: 'The photocard, rare item and legendary item of a member.'
-      + ' (9 collections, 1 per member)',
-    fixed_bonus: 7000,
-    context,
-  },
-  {
-    name: "Dahyun Special",
-    code: collectionCodes.dahyunSpecial,
-    description: 'The photocard, rare item and legendary item of a member.'
-      + ' (9 collections, 1 per member)',
-    fixed_bonus: 7000,
-    context,
-  },
-  {
-    name: "Chaeyoung Special",
-    code: collectionCodes.chaeyoungSpecial,
-    description: 'The photocard, rare item and legendary item of a member.'
-      + ' (9 collections, 1 per member)',
-    fixed_bonus: 7000,
-    context,
-  },
-  {
-    name: "Tzuyu Special",
-    code: collectionCodes.tzuyuSpecial,
-    description: 'The photocard, rare item and legendary item of a member.'
-      + ' (9 collections, 1 per member)',
-    fixed_bonus: 7000,
-    context,
-  },
-  {
-    name: "Cheer Up",
-    code: collectionCodes.cheerUp,
-    description: 'Page Two Album and Cheer Up Jacket.',
-    fixed_bonus: 5000,
-    context,
-  },
-  {
-    name: "Yes or Yes",
-    code: collectionCodes.yesOrYes,
-    description: 'Yes or Yes Album and Yes or Yes Dice.',
-    fixed_bonus: 5000,
-    context,
-  },
-  {
-    name: "Likey",
-    code: collectionCodes.likey,
-    description: 'Twicetagram Album and Likey Video Camera.',
-    fixed_bonus: 5000,
-    context,
-  },
-  {
-    name: "JYP",
-    code: collectionCodes.jyp,
-    description: 'What Is Love? Album, Signal Album, JYP Plastic Pants and JYP\'s MIDI Keyboard.',
-    fixed_bonus: 15000,
-    context,
-  }
+  items['JYP\'s MIDI Keyboard'],
+  items['JYP Plastic Pants'],
+  items['Idol Room Shirt'],
+  items['Sixteen Necklace'],
+  items['Pocari Sweat'],
+  items['Yes or Yes Dice'],
+  items['Cheer Up Jacket'],
+  items['Likey Video Camera'],
+  items['Jihyo\'s Photobook'],
+  items['Chaeyoung\'s Drawing'],
+  items['Momo\'s Circle'],
+  items['Dubu Cushion'],
+  items.Gucci,
+  items.Kkaengi,
+  items['Sana\'s Green Tea'],
+  items['Jeongyeon\'s Legos'],
+  items['Mina\'s Laptop'],
 ];
 
 /* Collections Items */
 const collectionsItems = [
   /* Sweet Collection */
-  ...niceItems.map(({ code }) => ({ collection_code: collectionCodes.sweet, item_code: code })),
+  ...niceItems.map(({ code }) => ({ collection_code: collections.Sweet.code, item_code: code })),
 
   /* Plushie Collection */
-  ...plushies.map(({ code }) => ({ collection_code: collectionCodes.plushie, item_code: code })),
+  ...plushies.map(({ code }) => ({ collection_code: collections.Plushie.code, item_code: code })),
 
   /* Lovelys Collection */
-  ...lovelys.map(({ code }) => ({ collection_code: collectionCodes.lovelys, item_code: code })),
+  ...lovelys.map(({ code }) => ({ collection_code: collections.Lovelys.code, item_code: code })),
 
   /* Album Collection */
-  ...albums.map(({ code }) => ({ collection_code: collectionCodes.album, item_code: code })),
+  ...albums.map(({ code }) => ({ collection_code: collections.Album.code, item_code: code })),
 
   /* TWICE Collection */
-  ...photocards.map(({ code }) => ({ collection_code: collectionCodes.twice, item_code: code })),
-  ...posters.map(({ code }) => ({ collection_code: collectionCodes.twice, item_code: code })),
+  ...photocards.map(({ code }) => ({ collection_code: collections.TWICE.code, item_code: code })),
+  ...posters.map(({ code }) => ({ collection_code: collections.TWICE.code, item_code: code })),
 
-  { collection_code: 'lc:swt', item_code: 'lc:c' },
-  { collection_code: 'lc:swt', item_code: 'lc:j' },
-  { collection_code: 'lc:swt', item_code: 'lc:sb' },
-  { collection_code: 'lc:mrch', item_code: 'lc:a' },
-  { collection_code: 'lc:mrch', item_code: 'lc:p' },
-  { collection_code: 'lc:mrch', item_code: 'lc:ph' },
-  { collection_code: 'lc:mrch', item_code: 'lc:ps' },
-  { collection_code: 'lc:rare', item_code: 'lc:mc' },
-  { collection_code: 'lc:rare', item_code: 'lc:jk' },
-  { collection_code: 'lc:rare', item_code: 'lc:sb' },
-  { collection_code: 'lc:rare', item_code: 'lc:cm' },
-  { collection_code: 'lc:rare', item_code: 'lc:sx' },
-  { collection_code: 'lc:rare', item_code: 'lc:ck' },
-  { collection_code: 'lc:rare', item_code: 'lc:th' },
-  { collection_code: 'lc:rare', item_code: 'lc:bw' },
-  { collection_code: 'lc:rare', item_code: 'lc:sw' },
-  { collection_code: 'lc:jyp', item_code: 'lc:a' },
-  { collection_code: 'lc:jyp', item_code: 'lc:jkb' },
-  { collection_code: 'lc:jyp', item_code: 'lc:ptp' },
-  { collection_code: 'lc:lgnd', item_code: 'lc:jkb' },
-  { collection_code: 'lc:lgnd', item_code: 'lc:ptp' },
-  { collection_code: 'lc:lgnd', item_code: 'lc:idl' },
-  { collection_code: 'lc:lgnd', item_code: 'lc:sxt' },
-  { collection_code: 'lc:lgnd', item_code: 'lc:psw' },
-  { collection_code: 'lc:lgnd', item_code: 'lc:yoy' },
-  { collection_code: 'lc:lgnd', item_code: 'lc:chj' },
-  { collection_code: 'lc:lgnd', item_code: 'lc:lkc' },
-  { collection_code: 'lc:lgnd', item_code: 'lc:jhp' },
-  { collection_code: 'lc:lgnd', item_code: 'lc:chd' },
-  { collection_code: 'lc:lgnd', item_code: 'lc:mmc' },
-  { collection_code: 'lc:lgnd', item_code: 'lc:dbc' },
-  { collection_code: 'lc:lgnd', item_code: 'lc:gci' },
-  { collection_code: 'lc:lgnd', item_code: 'lc:kng' },
-  { collection_code: 'lc:lgnd', item_code: 'lc:sgt' },
-  { collection_code: 'lc:lgnd', item_code: 'lc:jyl' },
-  { collection_code: 'lc:lgnd', item_code: 'lc:mnl' }
+  /* Nayeon Collection */
+  ...[
+    items['Nayeon Bunny Plushie'],
+    items['Nayeon Photocard'],
+    items['Nayeon Poster'],
+    items['MC Rail Cap'],
+  ].map(({ code }) => ({ collection_code: collections.Nayeon.code, item_code: code })),
+
+  /* Jeongyeon Collection */
+  ...[
+    items['Jeongyeon Dragon Plushie'],
+    items['Jeongyeon Photocard'],
+    items['Jeongyeon Poster'],
+    items.Saxophone,
+  ].map(({ code }) => ({ collection_code: collections.Jeongyeon.code, item_code: code })),
+
+  /* Momo Collection */
+  ...[
+    items['Momo Pig Plushie'],
+    items['Momo Photocard'],
+    items['Momo Poster'],
+    items.Jokbal,
+  ].map(({ code }) => ({ collection_code: collections.Momo.code, item_code: code })),
+
+  /* Sana Collection */
+  ...[
+    items['Sana Squirrel Plushie'],
+    items['Sana Photocard'],
+    items['Sana Poster'],
+    items['Cheese Kimbap'],
+  ].map(({ code }) => ({ collection_code: collections.Sana.code, item_code: code })),
+
+  /* Jihyo Collection */
+  ...[
+    items['Jihyo Unicorn Plushie'],
+    items['Jihyo Photocard'],
+    items['Jihyo Poster'],
+    items['Thomas the Train'],
+  ].map(({ code }) => ({ collection_code: collections.Jihyo.code, item_code: code })),
+
+  /* Mina Collection */
+  ...[
+    items['Mina Penguin Plushie'],
+    items['Mina Photocard'],
+    items['Mina Poster'],
+    items['Black Swan'],
+  ].map(({ code }) => ({ collection_code: collections.Mina.code, item_code: code })),
+
+  /* Dahyun Collection */
+  ...[
+    items['Dahyun Eagle Plushie'],
+    items['Dahyun Photocard'],
+    items['Dahyun Poster'],
+    items['Camera'],
+  ].map(({ code }) => ({ collection_code: collections.Dahyun.code, item_code: code })),
+
+  /* Chaeyoung Collection */
+  ...[
+    items['Chaeyoung Tiger Plushie'],
+    items['Chaeyoung Photocard'],
+    items['Chaeyoung Poster'],
+    items['Strawberry'],
+  ].map(({ code }) => ({ collection_code: collections.Chaeyoung.code, item_code: code })),
+
+  /* Tzuyu Collection */
+  ...[
+    items['Tzuyu Puppy Plushie'],
+    items['Tzuyu Photocard'],
+    items['Tzuyu Poster'],
+    items['Archery Bow'],
+  ].map(({ code }) => ({ collection_code: collections.Tzuyu.code, item_code: code })),
+
+  /* Nayeon Special Collection */
+  ...[
+    items['Nayeon Photocard'],
+    items['MC Rail Cap'],
+    items.Kkaengi,
+  ].map(({ code }) => ({ collection_code: collections['Nayeon Special'].code, item_code: code })),
+
+  /* Jeongyeon Special Collection */
+  ...[
+    items['Jeongyeon Photocard'],
+    items.Saxophone,
+    items['Jeongyeon\'s Legos'],
+  ].map(({ code }) => ({ collection_code: collections['Jeongyeon Special'].code, item_code: code })),
+
+  /* Momo Special Collection */
+  ...[
+    items['Momo Photocard'],
+    items.Jokbal,
+    items['Momo\'s Circle'],
+  ].map(({ code }) => ({ collection_code: collections['Momo Special'].code, item_code: code })),
+
+  /* Sana Special Collection */
+  ...[
+    items['Sana Photocard'],
+    items['Cheese Kimbap'],
+    items['Sana\'s Green Tea'],
+  ].map(({ code }) => ({ collection_code: collections['Sana Special'].code, item_code: code })),
+
+  /* Jihyo Special Collection */
+  ...[
+    items['Jihyo Photocard'],
+    items['Thomas the Train'],
+    items['Jihyo\'s Photobook'],
+  ].map(({ code }) => ({ collection_code: collections['Jihyo Special'].code, item_code: code })),
+
+  /* Mina Special Collection */
+  ...[
+    items['Mina Photocard'],
+    items['Black Swan'],
+    items['Mina\'s Laptop'],
+  ].map(({ code }) => ({ collection_code: collections['Mina Special'].code, item_code: code })),
+
+  /* Dahyun Special Collection */
+  ...[
+    items['Dahyun Photocard'],
+    items.Camera,
+    items['Dubu Cushion'],
+  ].map(({ code }) => ({ collection_code: collections['Dahyun Special'].code, item_code: code })),
+
+  /* Chaeyoung Special Collection */
+  ...[
+    items['Chaeyoung Photocard'],
+    items.Strawberry,
+    items['Chaeyoung\'s Drawing'],
+  ].map(({ code }) => ({ collection_code: collections['Chaeyoung Special'].code, item_code: code })),
+
+  /* Tzuyu Special Collection */
+  ...[
+    items['Tzuyu Photocard'],
+    items['Archery Bow'],
+    items.Gucci,
+  ].map(({ code }) => ({ collection_code: collections['Tzuyu Special'].code, item_code: code })),
+
+  /* Cheer Up Collection */
+  ...[
+    items['Page Two Album'],
+    items['Cheer Up Jacket']
+  ].map(({ code }) => ({ collection_code: collections['Cheer Up'].code, item_code: code })),
+
+  /* Yes or Yes Collection */
+  ...[
+    items['Yes or Yes Album'],
+    items['Yes or Yes Dice']
+  ].map(({ code }) => ({ collection_code: collections['Yes or Yes'].code, item_code: code })),
+
+  /* Likey Collection */
+  ...[
+    items['Twicetagram Album'],
+    items['Likey Video Camera']
+  ].map(({ code }) => ({ collection_code: collections['Likey'].code, item_code: code })),
+
+  /* JYP Collection */
+  ...[
+    items['JYP\'s MIDI Keyboard'],
+    items['JYP Plastic Pants'],
+    items['Signal Album'],
+    items['What Is Love? Album']
+  ].map(({ code }) => ({ collection_code: collections['JYP'].code, item_code: code })),
 ];
+
+// const _items = [
+//   ...niceItems,
+//   ...goodItems,
+//   ...amazingItems,
+//   ...rareItems,
+//   ...legendaryItems,
+// ];
+
+// fs.writeFileSync('./_local/collections.json', JSON.stringify(_items, null, 2));
+// fs.writeFileSync('./_local/collections.json', JSON.stringify(collections, null, 2));
 
 /** @param {import('knex').Knex} knex */
 exports.up = async function(knex)
 {
+  /* Get the existing categories from the database to filter the categories
+    to be saved. */
   const existingCategories = await knex(categoriesTable);
+
+  /* This array will contain the categories to be saved. */
   const newCategories = [];
-  const twicepediaCategories = [];
   for(const categoryName of categoryNames)
   {
     const existingCategory = existingCategories.find(({ name }) => name === categoryName);
     if(!existingCategory)
       newCategories.push({ id: nanoid(15), name: categoryName });
-    else
-      twicepediaCategories.push(existingCategory);
   }
 
   /* Insert the categories that aren't existing yet. */
@@ -686,7 +387,7 @@ exports.up = async function(knex)
   let rareCategoryId;
   let legendaryCategoryId;
 
-  const categories = [...twicepediaCategories, ...savedCategories];
+  const categories = [...existingCategories, ...savedCategories];
   for(const { id, name } of categories)
   {
     if(name === 'Nice')
@@ -706,7 +407,10 @@ exports.up = async function(knex)
   }
 
   /* Add the categories of the items. */
-  const items = [];
+  const itemsList = [];
+
+  /* The `items` in each element of this array refers to the items that
+    will fall under the category with the id of `categoryId`. */
   const itemsCategoryMap = [
     { items: niceItems, categoryId: niceCategoryId },
     { items: goodItems, categoryId: goodCategoryId },
@@ -714,25 +418,25 @@ exports.up = async function(knex)
     { items: rareItems, categoryId: rareCategoryId },
     { items: legendaryItems, categoryId: legendaryCategoryId },
   ];
-  for(const itemCategoryMap of itemsCategoryMap)
+
+  /* Loop through the items-categories map and set the categories of each item. */
+  for(const { items: itemsOfCategory, categoryId } of itemsCategoryMap)
   {
-    for(const item of itemCategoryMap.items)
+    for(const item of itemsOfCategory)
     {
-      item.category_id = itemCategoryMap.categoryId;
-      items.push(item);
+      item.category_id = categoryId;
+      itemsList.push(item);
     }
   }
 
-  await knex(itemsTable).insert(items);
-  await knex(collectionsTable).insert(collections);
-  // await knex(collectionsItemsTable).insert(collectionsItems);
+  await knex(itemsTable).insert(itemsList);
+  await knex(collectionsTable).insert(Object.values(collections));
+  await knex(collectionsItemsTable).insert(collectionsItems);
 };
 
 /** @param {import('knex').Knex} knex */
 exports.down = async function(knex)
 {
-  // await knex(collectionsTable).truncate();
-  // await knex(collectionsItemsTable).truncate();
   await knex(categoriesTable)
     .whereIn('name', newCategoryNames)
     .delete();
@@ -747,5 +451,15 @@ exports.down = async function(knex)
 
   await knex(itemsTable)
     .whereIn('code', itemCodes)
+    .delete();
+
+  const collectionCodes = Object.values(collections).map(({ code }) => code);
+
+  await knex(collectionsTable)
+    .whereIn('code', collectionCodes)
+    .delete();
+
+  await knex(collectionsItemsTable)
+    .whereIn('collection_code', collectionCodes)
     .delete();
 };
