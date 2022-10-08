@@ -1,0 +1,999 @@
+{
+  "Nayeon Candy": {
+    "code": "tp:ny-c",
+    "name": "Nayeon Candy",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍬",
+    "context": "discord:533510632985853953"
+  },
+  "Jeongyeon Candy": {
+    "code": "tp:jy-c",
+    "name": "Jeongyeon Candy",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍬",
+    "context": "discord:533510632985853953"
+  },
+  "Momo Candy": {
+    "code": "tp:mm-c",
+    "name": "Momo Candy",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍬",
+    "context": "discord:533510632985853953"
+  },
+  "Sana Candy": {
+    "code": "tp:sn-c",
+    "name": "Sana Candy",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍬",
+    "context": "discord:533510632985853953"
+  },
+  "Jihyo Candy": {
+    "code": "tp:jh-c",
+    "name": "Jihyo Candy",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍬",
+    "context": "discord:533510632985853953"
+  },
+  "Mina Candy": {
+    "code": "tp:mn-c",
+    "name": "Mina Candy",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍬",
+    "context": "discord:533510632985853953"
+  },
+  "Dahyun Candy": {
+    "code": "tp:dh-c",
+    "name": "Dahyun Candy",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍬",
+    "context": "discord:533510632985853953"
+  },
+  "Chaeyoung Candy": {
+    "code": "tp:ch-c",
+    "name": "Chaeyoung Candy",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍬",
+    "context": "discord:533510632985853953"
+  },
+  "Tzuyu Candy": {
+    "code": "tp:tz-c",
+    "name": "Tzuyu Candy",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍬",
+    "context": "discord:533510632985853953"
+  },
+  "Nayeon Jelly": {
+    "code": "tp:ny-j",
+    "name": "Nayeon Jelly",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍓",
+    "context": "discord:533510632985853953"
+  },
+  "Jeongyeon Jelly": {
+    "code": "tp:jy-j",
+    "name": "Jeongyeon Jelly",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍓",
+    "context": "discord:533510632985853953"
+  },
+  "Momo Jelly": {
+    "code": "tp:mm-j",
+    "name": "Momo Jelly",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍓",
+    "context": "discord:533510632985853953"
+  },
+  "Sana Jelly": {
+    "code": "tp:sn-j",
+    "name": "Sana Jelly",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍓",
+    "context": "discord:533510632985853953"
+  },
+  "Jihyo Jelly": {
+    "code": "tp:jh-j",
+    "name": "Jihyo Jelly",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍓",
+    "context": "discord:533510632985853953"
+  },
+  "Mina Jelly": {
+    "code": "tp:mn-j",
+    "name": "Mina Jelly",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍓",
+    "context": "discord:533510632985853953"
+  },
+  "Dahyun Jelly": {
+    "code": "tp:dh-j",
+    "name": "Dahyun Jelly",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍓",
+    "context": "discord:533510632985853953"
+  },
+  "Chaeyoung Jelly": {
+    "code": "tp:ch-j",
+    "name": "Chaeyoung Jelly",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍓",
+    "context": "discord:533510632985853953"
+  },
+  "Tzuyu Jelly": {
+    "code": "tp:tz-j",
+    "name": "Tzuyu Jelly",
+    "chance_min": 36,
+    "chance_max": 65,
+    "price": 10,
+    "emote": "🍓",
+    "context": "discord:533510632985853953"
+  },
+  "Nayeon Bunny Plushie": {
+    "code": "tp:ny-p",
+    "name": "Nayeon Bunny Plushie",
+    "chance_min": 15,
+    "chance_max": 35,
+    "price": 100,
+    "emote": "🐰",
+    "context": "discord:533510632985853953"
+  },
+  "Jeongyeon Dragon Plushie": {
+    "code": "tp:jy-p",
+    "name": "Jeongyeon Dragon Plushie",
+    "chance_min": 15,
+    "chance_max": 35,
+    "price": 100,
+    "emote": "🐲",
+    "context": "discord:533510632985853953"
+  },
+  "Momo Pig Plushie": {
+    "code": "tp:mm-p",
+    "name": "Momo Pig Plushie",
+    "chance_min": 15,
+    "chance_max": 35,
+    "price": 100,
+    "emote": "🐷",
+    "context": "discord:533510632985853953"
+  },
+  "Sana Squirrel Plushie": {
+    "code": "tp:sn-p",
+    "name": "Sana Squirrel Plushie",
+    "chance_min": 15,
+    "chance_max": 35,
+    "price": 100,
+    "emote": "🐿",
+    "context": "discord:533510632985853953"
+  },
+  "Jihyo Unicorn Plushie": {
+    "code": "tp:jh-p",
+    "name": "Jihyo Unicorn Plushie",
+    "chance_min": 15,
+    "chance_max": 35,
+    "price": 100,
+    "emote": "🦄",
+    "context": "discord:533510632985853953"
+  },
+  "Mina Penguin Plushie": {
+    "code": "tp:mn-p",
+    "name": "Mina Penguin Plushie",
+    "chance_min": 15,
+    "chance_max": 35,
+    "price": 100,
+    "emote": "🐧",
+    "context": "discord:533510632985853953"
+  },
+  "Dahyun Eagle Plushie": {
+    "code": "tp:dh-p",
+    "name": "Dahyun Eagle Plushie",
+    "chance_min": 15,
+    "chance_max": 35,
+    "price": 100,
+    "emote": "🦅",
+    "context": "discord:533510632985853953"
+  },
+  "Chaeyoung Tiger Plushie": {
+    "code": "tp:ch-p",
+    "name": "Chaeyoung Tiger Plushie",
+    "chance_min": 15,
+    "chance_max": 35,
+    "price": 100,
+    "emote": "🐯",
+    "context": "discord:533510632985853953"
+  },
+  "Tzuyu Puppy Plushie": {
+    "code": "tp:tz-p",
+    "name": "Tzuyu Puppy Plushie",
+    "chance_min": 15,
+    "chance_max": 35,
+    "price": 100,
+    "emote": "🐶",
+    "context": "discord:533510632985853953"
+  },
+  "The Story Begins Album": {
+    "code": "tp:tsb-a",
+    "name": "The Story Begins Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/82fcd832c095f99ee8fd751f81d0a2f93208e1d4"
+  },
+  "Page Two Album": {
+    "code": "tp:pgt-a",
+    "name": "Page Two Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/9c581e4951265c3c7a768e72519be88947758755"
+  },
+  "TWICEcoaster: Lane 1 Album": {
+    "code": "tp:tc1-a",
+    "name": "TWICEcoaster: Lane 1 Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/6551b45b4e5a692f61cd42357e7f9b08753430f9"
+  },
+  "TWICEcoaster: Lane 2 Album": {
+    "code": "tp:tc2-a",
+    "name": "TWICEcoaster: Lane 2 Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/8ed6a0c95f39ded5003aac8598797563992ecb00"
+  },
+  "Signal Album": {
+    "code": "tp:sgl-a",
+    "name": "Signal Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/770c9b5ddc0a151bf255406b7285abb121dd7a30"
+  },
+  "Twicetagram Album": {
+    "code": "tp:twt-a",
+    "name": "Twicetagram Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/1c2eba4f54e9a90e797ace930676ef6cd87d1779"
+  },
+  "Merry & Happy Album": {
+    "code": "tp:mnh-a",
+    "name": "Merry & Happy Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/a7fc15227ce39023c5e3d356efb29e327957cea4"
+  },
+  "What Is Love? Album": {
+    "code": "tp:wil-a",
+    "name": "What Is Love? Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/14e0b19c0cfb689d914ea021a393f25d77f6eeb8"
+  },
+  "Summer Nights Album": {
+    "code": "tp:smn-a",
+    "name": "Summer Nights Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/671e629019a12e2a1f7cf7a0c86d0a44cb6a8e58"
+  },
+  "BDZ Album": {
+    "code": "tp:bdz-a",
+    "name": "BDZ Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/699818ea7635b25d277861b9ec40602965efd1a3"
+  },
+  "BDZ (Repackage) Album": {
+    "code": "tp:bdr-a",
+    "name": "BDZ (Repackage) Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/77eb7c17cafe5503c514c0b7e2b942f6588f4eae"
+  },
+  "Yes or Yes Album": {
+    "code": "tp:yoy-a",
+    "name": "Yes or Yes Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/67cc1debed5c16a0801d83aed07da2d01a9fa20c"
+  },
+  "The Year of \"YES\" Album": {
+    "code": "tp:tyy-a",
+    "name": "The Year of \"YES\" Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/a9c13fb328423c703d26b8d98a8c6987e4242404"
+  },
+  "Fancy You Album": {
+    "code": "tp:fcy-a",
+    "name": "Fancy You Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/856711b1103e8c8a2042198191f96fc8e47715d5"
+  },
+  "Feel Special Album": {
+    "code": "tp:fsp-a",
+    "name": "Feel Special Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/2672add02cdf23f490a3911b837e733a48f66971"
+  },
+  "More & More Album": {
+    "code": "tp:mnm-a",
+    "name": "More & More Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/ab67616d0000b27328e649c0e2d1a3a98ccf8ea3"
+  },
+  "Candy Pop Album": {
+    "code": "tp:cdp-a",
+    "name": "Candy Pop Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/ebc421247e260e1a846bd48e05fbfbbae440f339"
+  },
+  "One More Time Album": {
+    "code": "tp:omt-a",
+    "name": "One More Time Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/3c3039d6c443b2945f39fda304bd9f81881d4c0c"
+  },
+  "Wake Me Up Album": {
+    "code": "tp:wmu-a",
+    "name": "Wake Me Up Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/eba07320c308e7a3d0009e670aaa9c646980df67"
+  },
+  "#TWICE Album": {
+    "code": "tp:htt-a",
+    "name": "#TWICE Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/6333e7e989d68e665f512f3ca29f389dad6860ff"
+  },
+  "#TWICE2 Album": {
+    "code": "tp:ht2-a",
+    "name": "#TWICE2 Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/068b02a90e73c68025ac04abb3e784ea29e53b15"
+  },
+  "Breakthrough Album": {
+    "code": "tp:bth-a",
+    "name": "Breakthrough Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/6ecee0db960d381e8c51b1a3d1d99a8d71d154c3"
+  },
+  "HAPPY HAPPY Album": {
+    "code": "tp:hph-a",
+    "name": "HAPPY HAPPY Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/52043f529df82e4af5f25c4a1f58fa5060bdba6a"
+  },
+  "&TWICE Album": {
+    "code": "tp:ntw-a",
+    "name": "&TWICE Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/ab67616d0000b27329e7568dbd16f270b3d96db4"
+  },
+  "Fanfare Album": {
+    "code": "tp:fnf-a",
+    "name": "Fanfare Album",
+    "price": 100,
+    "chance_min": 15,
+    "chance_max": 35,
+    "emote": "💿",
+    "context": "discord:533510632985853953",
+    "image": "https://i.scdn.co/image/ab67616d0000b273dd4a6d26627cc697b3f4d8be"
+  },
+  "Nayeon Photocard": {
+    "code": "tp:ny-pc",
+    "name": "Nayeon Photocard",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🎞",
+    "image": "https://i.imgur.com/iNX9ErD.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Jeongyeon Photocard": {
+    "code": "tp:jy-pc",
+    "name": "Jeongyeon Photocard",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🎞",
+    "image": "https://i.imgur.com/pA54JXE.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Momo Photocard": {
+    "code": "tp:mm-pc",
+    "name": "Momo Photocard",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🎞",
+    "image": "https://i.imgur.com/ZNXbMOZ.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Sana Photocard": {
+    "code": "tp:sn-pc",
+    "name": "Sana Photocard",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🎞",
+    "image": "https://i.imgur.com/wTi3BoN.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Jihyo Photocard": {
+    "code": "tp:jh-pc",
+    "name": "Jihyo Photocard",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🎞",
+    "image": "https://i.imgur.com/2w7UaID.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Mina Photocard": {
+    "code": "tp:mn-pc",
+    "name": "Mina Photocard",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🎞",
+    "image": "https://i.imgur.com/pZfwokN.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Dahyun Photocard": {
+    "code": "tp:dh-pc",
+    "name": "Dahyun Photocard",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🎞",
+    "image": "https://i.imgur.com/ax1G8UG.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Chaeyoung Photocard": {
+    "code": "tp:ch-pc",
+    "name": "Chaeyoung Photocard",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🎞",
+    "image": "https://i.imgur.com/3f62mR5.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Tzuyu Photocard": {
+    "code": "tp:tz-pc",
+    "name": "Tzuyu Photocard",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🎞",
+    "image": "https://i.imgur.com/JpqJVKL.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Nayeon Poster": {
+    "code": "tp:ny-ps",
+    "name": "Nayeon Poster",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🖼",
+    "image": "https://i.imgur.com/loE6BZX.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Jeongyeon Poster": {
+    "code": "tp:jy-ps",
+    "name": "Jeongyeon Poster",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🖼",
+    "image": "https://i.imgur.com/FXegKZo.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Momo Poster": {
+    "code": "tp:mm-ps",
+    "name": "Momo Poster",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🖼",
+    "image": "https://i.imgur.com/trfa56Z.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Sana Poster": {
+    "code": "tp:sn-ps",
+    "name": "Sana Poster",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🖼",
+    "image": "https://i.imgur.com/ab0c1za.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Jihyo Poster": {
+    "code": "tp:jh-ps",
+    "name": "Jihyo Poster",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🖼",
+    "image": "https://i.imgur.com/TC3qOnd.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Mina Poster": {
+    "code": "tp:mn-ps",
+    "name": "Mina Poster",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🖼",
+    "image": "https://i.imgur.com/8RR64UD.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Dahyun Poster": {
+    "code": "tp:dh-ps",
+    "name": "Dahyun Poster",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🖼",
+    "image": "https://i.imgur.com/gXDt6ur.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Chaeyoung Poster": {
+    "code": "tp:ch-ps",
+    "name": "Chaeyoung Poster",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🖼",
+    "image": "https://i.imgur.com/XeTSFwd.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Tzuyu Poster": {
+    "code": "tp:tz-ps",
+    "name": "Tzuyu Poster",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "🖼",
+    "image": "https://i.imgur.com/GUjUPk0.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Nayeon Lovely": {
+    "code": "tp:ny-lv",
+    "name": "Nayeon Lovely",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "💗",
+    "image": "https://i.imgur.com/qakDPak.png",
+    "context": "discord:533510632985853953"
+  },
+  "Jeongyeon Lovely": {
+    "code": "tp:jy-lv",
+    "name": "Jeongyeon Lovely",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "💗",
+    "image": "https://i.imgur.com/7fu6jQ5.png",
+    "context": "discord:533510632985853953"
+  },
+  "Momo Lovely": {
+    "code": "tp:mm-lv",
+    "name": "Momo Lovely",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "💗",
+    "image": "https://i.imgur.com/1TVTJW5.png",
+    "context": "discord:533510632985853953"
+  },
+  "Sana Lovely": {
+    "code": "tp:sn-lv",
+    "name": "Sana Lovely",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "💗",
+    "image": "https://i.imgur.com/PVhqXSC.png",
+    "context": "discord:533510632985853953"
+  },
+  "Jihyo Lovely": {
+    "code": "tp:jh-lv",
+    "name": "Jihyo Lovely",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "💗",
+    "image": "https://i.imgur.com/cAx4waP.png",
+    "context": "discord:533510632985853953"
+  },
+  "Mina Lovely": {
+    "code": "tp:mn-lv",
+    "name": "Mina Lovely",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "💗",
+    "image": "https://i.imgur.com/765azWY.png",
+    "context": "discord:533510632985853953"
+  },
+  "Dahyun Lovely": {
+    "code": "tp:dh-lv",
+    "name": "Dahyun Lovely",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "💗",
+    "image": "https://i.imgur.com/kIEhn2X.png",
+    "context": "discord:533510632985853953"
+  },
+  "Chaeyoung Lovely": {
+    "code": "tp:ch-lv",
+    "name": "Chaeyoung Lovely",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "💗",
+    "image": "https://i.imgur.com/loq4gWB.png",
+    "context": "discord:533510632985853953"
+  },
+  "Tzuyu Lovely": {
+    "code": "tp:tz-lv",
+    "name": "Tzuyu Lovely",
+    "chance_min": 6,
+    "chance_max": 14,
+    "price": 200,
+    "emote": "💗",
+    "image": "https://i.imgur.com/5Fm2DQM.png",
+    "context": "discord:533510632985853953"
+  },
+  "MC Rail Cap": {
+    "code": "tp:mc",
+    "name": "MC Rail Cap",
+    "chance_min": 0.6,
+    "chance_max": 5,
+    "price": 750,
+    "image": "https://i.imgur.com/papUxvz.png",
+    "context": "discord:533510632985853953"
+  },
+  "Jokbal": {
+    "code": "tp:jk",
+    "name": "Jokbal",
+    "chance_min": 0.6,
+    "chance_max": 5,
+    "price": 750,
+    "image": "https://i.imgur.com/XXocy8y.png",
+    "context": "discord:533510632985853953"
+  },
+  "Strawberry": {
+    "code": "tp:sb",
+    "name": "Strawberry",
+    "chance_min": 0.6,
+    "chance_max": 5,
+    "price": 750,
+    "image": "https://i.imgur.com/MVvL7M1.png",
+    "context": "discord:533510632985853953"
+  },
+  "Camera": {
+    "code": "tp:cm",
+    "name": "Camera",
+    "chance_min": 0.6,
+    "chance_max": 5,
+    "price": 750,
+    "image": "https://i.imgur.com/kCP8DD9.png",
+    "context": "discord:533510632985853953"
+  },
+  "Saxophone": {
+    "code": "tp:sx",
+    "name": "Saxophone",
+    "chance_min": 0.6,
+    "chance_max": 5,
+    "price": 750,
+    "image": "https://i.imgur.com/r9Bn7Xn.png",
+    "context": "discord:533510632985853953"
+  },
+  "Cheese Kimbap": {
+    "code": "tp:ck",
+    "name": "Cheese Kimbap",
+    "chance_min": 0.6,
+    "chance_max": 5,
+    "price": 750,
+    "image": "https://i.imgur.com/LHXMx6o.png",
+    "context": "discord:533510632985853953"
+  },
+  "Thomas the Train": {
+    "code": "tp:th",
+    "name": "Thomas the Train",
+    "chance_min": 0.6,
+    "chance_max": 5,
+    "price": 750,
+    "image": "https://i.imgur.com/4AiC8zx.png",
+    "context": "discord:533510632985853953"
+  },
+  "Archery Bow": {
+    "code": "tp:bw",
+    "name": "Archery Bow",
+    "chance_min": 0.6,
+    "chance_max": 5,
+    "price": 750,
+    "image": "https://i.imgur.com/cEMhTQx.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Black Swan": {
+    "code": "tp:sw",
+    "name": "Black Swan",
+    "chance_min": 0.6,
+    "chance_max": 5,
+    "price": 750,
+    "image": "https://i.imgur.com/qOufKJA.png",
+    "context": "discord:533510632985853953"
+  },
+  "JYP's MIDI Keyboard": {
+    "code": "tp:jkb",
+    "name": "JYP's MIDI Keyboard",
+    "chance_min": 0,
+    "chance_max": 0.5,
+    "price": 4000,
+    "image": "https://i.imgur.com/4PW4KE5.png",
+    "context": "discord:533510632985853953"
+  },
+  "JYP Plastic Pants": {
+    "code": "tp:ptp",
+    "name": "JYP Plastic Pants",
+    "chance_min": 0,
+    "chance_max": 0.5,
+    "price": 4000,
+    "image": "https://i.imgur.com/yEpLsr0.png",
+    "context": "discord:533510632985853953"
+  },
+  "Idol Room Shirt": {
+    "code": "tp:idl",
+    "name": "Idol Room Shirt",
+    "chance_min": 0,
+    "chance_max": 0.5,
+    "price": 4000,
+    "image": "https://i.imgur.com/WY1TCJe.png",
+    "context": "discord:533510632985853953"
+  },
+  "Sixteen Necklace": {
+    "code": "tp:sxt",
+    "name": "Sixteen Necklace",
+    "chance_min": 0,
+    "chance_max": 0.5,
+    "price": 4000,
+    "image": "https://i.imgur.com/uRinEh7.png",
+    "context": "discord:533510632985853953"
+  },
+  "Pocari Sweat": {
+    "code": "tp:psw",
+    "name": "Pocari Sweat",
+    "chance_min": 0,
+    "chance_max": 0.5,
+    "price": 4000,
+    "image": "https://i.imgur.com/bg0zHIp.png",
+    "context": "discord:533510632985853953"
+  },
+  "Yes or Yes Dice": {
+    "code": "tp:yoy",
+    "name": "Yes or Yes Dice",
+    "chance_min": 0,
+    "chance_max": 0.5,
+    "price": 4000,
+    "image": "https://i.imgur.com/EaE1r8L.png",
+    "context": "discord:533510632985853953"
+  },
+  "Cheer Up Jacket": {
+    "code": "tp:chj",
+    "name": "Cheer Up Jacket",
+    "chance_min": 0,
+    "chance_max": 0.5,
+    "price": 4000,
+    "image": "https://i.imgur.com/s0wo5mo.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Likey Video Camera": {
+    "code": "tp:lkc",
+    "name": "Likey Video Camera",
+    "chance_min": 0,
+    "chance_max": 0.5,
+    "price": 4000,
+    "image": "https://i.imgur.com/VJGe6oO.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Jihyo's Photobook": {
+    "code": "tp:jhp",
+    "name": "Jihyo's Photobook",
+    "chance_min": 0,
+    "chance_max": 0.5,
+    "price": 4000,
+    "image": "https://i.imgur.com/M3Sf2ew.png",
+    "context": "discord:533510632985853953"
+  },
+  "Chaeyoung's Drawing": {
+    "code": "tp:chd",
+    "name": "Chaeyoung's Drawing",
+    "chance_min": 0,
+    "chance_max": 0.5,
+    "price": 4000,
+    "image": "https://i.imgur.com/Ib23ete.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Momo's Circle": {
+    "code": "tp:mmc",
+    "name": "Momo's Circle",
+    "chance_min": 0,
+    "chance_max": 0.5,
+    "price": 4000,
+    "image": "https://i.imgur.com/FecM5ob.png",
+    "context": "discord:533510632985853953"
+  },
+  "Dubu Cushion": {
+    "code": "tp:dbc",
+    "name": "Dubu Cushion",
+    "chance_min": 0,
+    "chance_max": 0.5,
+    "price": 4000,
+    "image": "https://i.ytimg.com/vi/Wqj15fbhKu4/maxresdefault.jpg",
+    "context": "discord:533510632985853953"
+  },
+  "Gucci": {
+    "code": "tp:gci",
+    "name": "Gucci",
+    "chance_min": 0,
+    "chance_max": 0.5,
+    "price": 4000,
+    "image": "https://i.imgur.com/JIfD9dH.png",
+    "context": "discord:533510632985853953"
+  },
+  "Kkaengi": {
+    "code": "tp:kng",
+    "name": "Kkaengi",
+    "chance_min": 0,
+    "chance_max": 0.5,
+    "price": 4000,
+    "image": "https://i.imgur.com/gax0X5t.png",
+    "context": "discord:533510632985853953"
+  },
+  "Sana's Green Tea": {
+    "code": "tp:sgt",
+    "name": "Sana's Green Tea",
+    "chance_min": 0,
+    "chance_max": 0.5,
+    "price": 4000,
+    "image": "https://i.imgur.com/Bpo59eZ.png",
+    "context": "discord:533510632985853953"
+  },
+  "Jeongyeon's Legos": {
+    "code": "tp:jyl",
+    "name": "Jeongyeon's Legos",
+    "chance_min": 0,
+    "chance_max": 0.5,
+    "price": 4000,
+    "image": "https://i.imgur.com/Gvi0yD7.png",
+    "context": "discord:533510632985853953"
+  },
+  "Mina's Laptop": {
+    "code": "tp:mnl",
+    "name": "Mina's Laptop",
+    "chance_min": 0,
+    "chance_max": 0.5,
+    "price": 4000,
+    "image": "https://i.imgur.com/ZTyTkiG.png",
+    "context": "discord:533510632985853953"
+  }
+}

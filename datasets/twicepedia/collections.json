@@ -1,0 +1,191 @@
+{
+  "Sweet": {
+    "name": "Sweet",
+    "code": "tp:swt",
+    "description": "All 9 candies and jellies of all members.",
+    "fixed_bonus": 500,
+    "context": "discord:533510632985853953"
+  },
+  "Plushie": {
+    "name": "Plushie",
+    "code": "tp:pl",
+    "description": "All 9 plushies, 1 per member.",
+    "fixed_bonus": 3000,
+    "context": "discord:533510632985853953"
+  },
+  "Lovelys": {
+    "name": "Lovelys",
+    "code": "tp:lvl",
+    "description": "All 9 lovelys, 1 per member.",
+    "fixed_bonus": 5000,
+    "context": "discord:533510632985853953"
+  },
+  "Album": {
+    "name": "Album",
+    "code": "tp:alb",
+    "description": "All the albums and EPs. (Do the `albums` command to see all albums and EPs.)",
+    "fixed_bonus": 7000,
+    "context": "discord:533510632985853953"
+  },
+  "TWICE": {
+    "name": "TWICE",
+    "code": "tp:tw",
+    "description": "All photocards and posters of each member.",
+    "fixed_bonus": 9000,
+    "context": "discord:533510632985853953"
+  },
+  "Nayeon": {
+    "name": "Nayeon",
+    "code": "tp:ny",
+    "description": "The plushie, photocard, poster and rare item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 4000,
+    "context": "discord:533510632985853953"
+  },
+  "Jeongyeon": {
+    "name": "Jeongyeon",
+    "code": "tp:jy",
+    "description": "The plushie, photocard, poster and rare item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 4000,
+    "context": "discord:533510632985853953"
+  },
+  "Momo": {
+    "name": "Momo",
+    "code": "tp:mm",
+    "description": "The plushie, photocard, poster and rare item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 4000,
+    "context": "discord:533510632985853953"
+  },
+  "Sana": {
+    "name": "Sana",
+    "code": "tp:sn",
+    "description": "The plushie, photocard, poster and rare item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 4000,
+    "context": "discord:533510632985853953"
+  },
+  "Jihyo": {
+    "name": "Jihyo",
+    "code": "tp:jh",
+    "description": "The plushie, photocard, poster and rare item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 4000,
+    "context": "discord:533510632985853953"
+  },
+  "Mina": {
+    "name": "Mina",
+    "code": "tp:mn",
+    "description": "The plushie, photocard, poster and rare item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 4000,
+    "context": "discord:533510632985853953"
+  },
+  "Dahyun": {
+    "name": "Dahyun",
+    "code": "tp:dh",
+    "description": "The plushie, photocard, poster and rare item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 7000,
+    "context": "discord:533510632985853953"
+  },
+  "Chaeyoung": {
+    "name": "Chaeyoung",
+    "code": "tp:ch",
+    "description": "The plushie, photocard, poster and rare item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 4000,
+    "context": "discord:533510632985853953"
+  },
+  "Tzuyu": {
+    "name": "Tzuyu",
+    "code": "tp:tz",
+    "description": "The plushie, photocard, poster and rare item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 4000,
+    "context": "discord:533510632985853953"
+  },
+  "Nayeon Special": {
+    "name": "Nayeon Special",
+    "code": "tp:nys",
+    "description": "The photocard, rare item and legendary item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 7000,
+    "context": "discord:533510632985853953"
+  },
+  "Jeongyeon Special": {
+    "name": "Jeongyeon Special",
+    "code": "tp:jys",
+    "description": "The photocard, rare item and legendary item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 7000,
+    "context": "discord:533510632985853953"
+  },
+  "Momo Special": {
+    "name": "Momo Special",
+    "code": "tp:mms",
+    "description": "The photocard, rare item and legendary item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 7000,
+    "context": "discord:533510632985853953"
+  },
+  "Sana Special": {
+    "name": "Sana Special",
+    "code": "tp:sns",
+    "description": "The photocard, rare item and legendary item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 7000,
+    "context": "discord:533510632985853953"
+  },
+  "Jihyo Special": {
+    "name": "Jihyo Special",
+    "code": "tp:jhs",
+    "description": "The photocard, rare item and legendary item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 7000,
+    "context": "discord:533510632985853953"
+  },
+  "Mina Special": {
+    "name": "Mina Special",
+    "code": "tp:mns",
+    "description": "The photocard, rare item and legendary item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 7000,
+    "context": "discord:533510632985853953"
+  },
+  "Dahyun Special": {
+    "name": "Dahyun Special",
+    "code": "tp:dhs",
+    "description": "The photocard, rare item and legendary item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 7000,
+    "context": "discord:533510632985853953"
+  },
+  "Chaeyoung Special": {
+    "name": "Chaeyoung Special",
+    "code": "tp:chs",
+    "description": "The photocard, rare item and legendary item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 7000,
+    "context": "discord:533510632985853953"
+  },
+  "Tzuyu Special": {
+    "name": "Tzuyu Special",
+    "code": "tp:tzs",
+    "description": "The photocard, rare item and legendary item of a member. (9 collections, 1 per member)",
+    "fixed_bonus": 7000,
+    "context": "discord:533510632985853953"
+  },
+  "Cheer Up": {
+    "name": "Cheer Up",
+    "code": "tp:chr",
+    "description": "Page Two Album and Cheer Up Jacket.",
+    "fixed_bonus": 5000,
+    "context": "discord:533510632985853953"
+  },
+  "Yes or Yes": {
+    "name": "Yes or Yes",
+    "code": "tp:yoy",
+    "description": "Yes or Yes Album and Yes or Yes Dice.",
+    "fixed_bonus": 5000,
+    "context": "discord:533510632985853953"
+  },
+  "Likey": {
+    "name": "Likey",
+    "code": "tp:lky",
+    "description": "Twicetagram Album and Likey Video Camera.",
+    "fixed_bonus": 5000,
+    "context": "discord:533510632985853953"
+  },
+  "JYP": {
+    "name": "JYP",
+    "code": "tp:jyp",
+    "description": "What Is Love? Album, Signal Album, JYP Plastic Pants and JYP's MIDI Keyboard.",
+    "fixed_bonus": 15000,
+    "context": "discord:533510632985853953"
+  }
+}
