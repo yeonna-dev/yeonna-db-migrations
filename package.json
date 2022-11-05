@@ -1,10 +1,12 @@
 {
 	"devDependencies": {
+		"better-sqlite3": "^7.6.2",
 		"dotenv": "^10.0.0",
+		"esm": "^3.2.25",
 		"nanoid-good": "^3.1.0"
 	},
 	"dependencies": {
-		"knex": "^0.95.6",
+		"knex": "^2.3.0",
 		"pg": "^8.6.0"
 	}
 }
