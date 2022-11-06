@@ -74,41 +74,46 @@ const oldDatabase = knex({
     }
   }
 
-  const obtainablesTable = newDatabase('obtainables');
-  const twicepediaContext = 'discord:533510632985853953';
-  console.log('Inserting user obtainables...');
+  // const obtainablesTable = newDatabase('obtainables');
+  // const twicepediaContext = 'discord:533510632985853953';
+  // console.log('Inserting user obtainables...');
 
-  /**
-   * @typedef Obtainable
-   * @property {string} user_id
-   * @property {string} amount
-   * @property {boolean} is_collectible
-   */
-  /** @type {Obtainable[]} */
-  const existingObtainables = await obtainablesTable.where({ context: twicepediaContext });
-  const existingPointsUserIds = [];
-  for(const { user_id, is_collectible } of existingObtainables)
-  {
-    if(!existingPointsUserIds.includes(user_id))
-      existingPointsUserIds.push(user_id);
+  // /**
+  //  * @typedef Obtainable
+  //  * @property {string} user_id
+  //  * @property {string} amount
+  //  * @property {boolean} is_collectible
+  //  */
+  // /** @type {Obtainable[]} */
+  // const existingObtainables = await obtainablesTable.where({ context: twicepediaContext });
+  // const existingPointsUserIds = [];
+  // for(const { user_id, is_collectible } of existingObtainables)
+  // {
+  //   if(!existingPointsUserIds.includes(user_id))
+  //     existingPointsUserIds.push(user_id);
 
-    const user = userDataMap[user_id];
-    const newObtainables = is_collectible ? user.candybongs : user.coins;
-    await obtainablesTable
-      .where({ user_id })
-      .andWhere({ is_collectible })
-      .andWhere({ context: twicepediaContext })
-      .update({ amount: newObtainables });
-  }
+  //   const user = userDataMap[user_id];
+  //   const newObtainables = is_collectible ? user.candybongs : user.coins;
+  //   await obtainablesTable
+  //     .where({ user_id })
+  //     .andWhere({ is_collectible })
+  //     .andWhere({ context: twicepediaContext })
+  //     .update({ amount: newObtainables });
+  // }
 
-  const obtainablesToInsert = [];
-  for(const { new_id, coins, candybongs } of Object.values(userDataMap))
-  {
-    obtainablesToInsert.push({ user_id: new_id, amount: coins, is_collectible: false });
-    obtainablesToInsert.push({ user_id: new_id, amount: candybongs, is_collectible: false });
-  }
+  // const obtainablesToInsert = [];
+  // for(const { new_id, coins, candybongs } of Object.values(userDataMap))
+  // {
+  //   obtainablesToInsert.push({ user_id: new_id, amount: coins, is_collectible: false });
+  //   obtainablesToInsert.push({ user_id: new_id, amount: candybongs, is_collectible: false });
+  // }
 
   console.log('Inserting users items...');
+  const inventoriesTable = newDatabase('inventories');
+  await inventoriesTable.where({ context: twicepediaContext }).delete();
+
+  /* Loop through each user data, parse the user items, loop through the item and make an array
+    of objects of each item with the other user data. */
 
   console.log('Inserting user collections...');
 
