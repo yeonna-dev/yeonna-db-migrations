@@ -15,6 +15,8 @@ const oldDatabase = knex({
   connection: { filename: databasePath }
 });
 
+const twicepediaContext = 'discord:533510632985853953';
+
 (async () =>
 {
   console.log('Reading old database...');
@@ -33,10 +35,6 @@ const oldDatabase = knex({
   /** @type {Record<string, User>} */
   const userDataMap = {};
 
-  /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-  /* Insert Users */
-  /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
   const userIdsToInsert = [];
   const newUserIds = [];
   for(const userData of oldData)
@@ -48,6 +46,10 @@ const oldDatabase = knex({
     if(!userDataMap[userId])
       userDataMap[userId] = userData;
   }
+
+  /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  /* Insert Users */
+  /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
   console.log('Inserting users...');
   const usersTable = newDatabase('users');
@@ -79,12 +81,13 @@ const oldDatabase = knex({
     }
   }
 
+  console.log(Object.values(userDataMap).filter(({ new_id }) => new_id === 'Zgij1dpUAIodlZC'));
+
   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   /* Insert Obtainables */
   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
   const obtainablesTable = newDatabase('obtainables');
-  const twicepediaContext = 'discord:533510632985853953';
   console.log('Inserting user obtainables...');
 
   /* Delete all obtainables, which will be reinserted aftewards. */
@@ -124,12 +127,45 @@ const oldDatabase = knex({
   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
   console.log('Inserting users items...');
-  // const inventoriesTable = newDatabase('inventories');
-  // await inventoriesTable.where({ context: twicepediaContext }).delete();
+  const inventoriesTable = newDatabase('inventories');
+  await inventoriesTable.where({ context: twicepediaContext }).delete();
+
+  /**
+   * @typedef UserItem
+   * @property {string} user_id
+   * @property {string} item_code
+   * @property {string} user_id_item_code
+   * @property {string} context
+   * @property {number} amount
+   */
+  /** @type {UserItem[]} */
+  const userItems = [];
 
   /* Loop through each user data, parse the user items, loop through the item and make an array
     of objects of each item with the other user data. */
+  for(const { items, new_id } of Object.values(userDataMap))
+  {
+    if(!new_id)
+      continue;
 
+    const parsedItems = JSON.parse(items);
+    if(Object.keys(parsedItems).length === 0)
+      continue;
+
+    for(const item_code in parsedItems)
+    {
+      const amount = parsedItems[item_code];
+      userItems.push({
+        user_id: new_id,
+        item_code,
+        user_id_item_code: `${new_id}:${item_code}`,
+        context: twicepediaContext,
+        amount,
+      });
+    }
+  }
+
+  await inventoriesTable.insert(userItems);
 
   console.log('Inserting user collections...');
 
