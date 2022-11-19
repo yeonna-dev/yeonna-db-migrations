@@ -16,6 +16,7 @@ const oldDatabase = knex({
 });
 
 const twicepediaContext = 'discord:533510632985853953';
+const twicepediaCodePrefix = 'tp:';
 
 (async () =>
 {
@@ -40,7 +41,7 @@ const twicepediaContext = 'discord:533510632985853953';
   for(const userData of oldData)
   {
     const userId = userData.discord_id;
-    if(userData.coins > 0 || userData.candybongs > 0)
+    if(userData.coins > 0 || userData.candybongs > 0 || userData.items !== '{}')
       userIdsToInsert.push(userId);
 
     if(!userDataMap[userId])
@@ -80,8 +81,6 @@ const twicepediaContext = 'discord:533510632985853953';
       userDataMap[discord_id].new_id = id;
     }
   }
-
-  console.log(Object.values(userDataMap).filter(({ new_id }) => new_id === 'Zgij1dpUAIodlZC'));
 
   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   /* Insert Obtainables */
@@ -125,7 +124,6 @@ const twicepediaContext = 'discord:533510632985853953';
   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   /* Insert Items */
   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
   console.log('Inserting users items...');
   const inventoriesTable = newDatabase('inventories');
   await inventoriesTable.where({ context: twicepediaContext }).delete();
@@ -152,22 +150,54 @@ const twicepediaContext = 'discord:533510632985853953';
     if(Object.keys(parsedItems).length === 0)
       continue;
 
-    for(const item_code in parsedItems)
+    for(let item_code in parsedItems)
     {
       const amount = parsedItems[item_code];
+      const itemCode = `${twicepediaCodePrefix}${item_code}`;
       userItems.push({
         user_id: new_id,
-        item_code,
-        user_id_item_code: `${new_id}:${item_code}`,
-        context: twicepediaContext,
+        item_code: itemCode,
+        user_id_item_code: `${new_id}:${itemCode}`,
         amount,
+        context: twicepediaContext,
       });
     }
   }
 
   await inventoriesTable.insert(userItems);
 
-  console.log('Inserting user collections...');
+  /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  /* Insert Collections */
+  /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  console.log('Inserting users collections...');
+  const collectionsTable = newDatabase('users_collections');
+  await collectionsTable.where({ context: twicepediaContext }).delete();
+
+  const usersCollections = [];
+  for(const { collections, new_id } of Object.values(userDataMap))
+  {
+    if(!new_id)
+      continue;
+
+    /** @type {string[]} */
+    const collectionsArray = JSON.parse(collections);
+    if(collectionsArray.length === 0)
+      continue;
+
+    for(const collectionCode of collectionsArray)
+    {
+      if(!collectionCode)
+        continue;
+
+      usersCollections.push({
+        user_id: new_id,
+        collection_code: `${twicepediaCodePrefix}${collectionCode.replace('col-', '')}`,
+        context: twicepediaContext,
+      });
+    }
+  }
+
+  await collectionsTable.insert(usersCollections);
 
   console.log('Done');
 
