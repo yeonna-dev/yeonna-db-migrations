@@ -3,3 +3,4 @@ node_modules
 .vscode
 
 etc/twicepedia-old-data-migration/*.sqlite
+etc/twicepedia-old-data-migration/backups
