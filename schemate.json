@@ -21,6 +21,9 @@
     },
     "common": {
       "migrationsDir": "migrations/common/"
+    },
+    "time_logs": {
+      "migrationsDir": "migrations/time_logs/"
     }
   }
 }
